@@ -44,6 +44,12 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
       buildLevel(lightMap, darkMap, 'Map_001');
     });
   });
+  
+  Crafty.scene('Map_002', function () {
+    require(['Light Map 2', 'Dark Map 2', 'map'], function (lightMap, darkMap) {
+      buildLevel(lightMap, darkMap, 'insertNextLevelHere');
+    });
+  });
 
   return {
     loading: 'Loading',
