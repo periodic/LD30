@@ -2,6 +2,16 @@
  * Defines scenes and scene-specific setup and state.
  */
 define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
+
+  function buildLevel(lightMap, darkMap, nextScene) {
+      var map = Crafty.e('DoubleMap').doubleMap(lightMap, darkMap);
+
+      var lightStart = Crafty.e('LightWorld StartPosition').addComponent('LightPlayer');
+      var darkStart = Crafty.e('DarkWorld StartPosition').addComponent('DarkPlayer');
+
+      Crafty.trigger('LightTransition');
+  }
+
   Crafty.scene('Loading', function (nextScene, assetList) {
     Crafty.background('black');
     var loadingText = Crafty.e('2D, Canvas, Text')
@@ -21,20 +31,8 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
   });
 
   Crafty.scene('Test', function () {
-    require(['level1a', 'level1b', 'map'], function (aMap, bMap) {
-      var map = Crafty.e('DoubleMap').doubleMap(aMap, bMap);
-
-      var player = Crafty.e('LightPlayer').attr({
-        x: 32,
-        y: 32,
-      }).sprite(0,0);
-
-      var player = Crafty.e('DarkPlayer').attr({
-        x: 32,
-        y: 32,
-      }).sprite(0,0);
-
-      Crafty.trigger('LightTransition');
+    require(['level1a', 'level1b', 'map'], function (lightMap, darkMap) {
+      buildLevel(lightMap, darkMap, 'insertNextLevelHere');
     });
   });
 

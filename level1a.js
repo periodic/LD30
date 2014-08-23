@@ -10,6 +10,30 @@ define({ "height":10,
          "width":10,
          "x":0,
          "y":0
+        }, 
+        {
+         "height":10,
+         "name":"StartPos",
+         "objects":[
+                {
+                 "height":27,
+                 "name":"StartPosition",
+                 "properties":
+                    {
+
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":28,
+                 "x":130,
+                 "y":68
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":10,
+         "x":0,
+         "y":0
         }],
  "orientation":"orthogonal",
  "properties":
@@ -36,4 +60,4 @@ define({ "height":10,
  "tilewidth":32,
  "version":1,
  "width":10
-})
+});

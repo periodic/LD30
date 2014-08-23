@@ -8,4 +8,7 @@
    eJxjYKANUCdSbLADevsDAHyoAJ0=
   </data>
  </layer>
+ <objectgroup name="StartPos" width="10" height="10">
+  <object name="StartPosition" x="130" y="163" width="28" height="29"/>
+ </objectgroup>
 </map>
