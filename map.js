@@ -1,12 +1,21 @@
 define(['lib/crafty', 'constants', 'lib/tiledmapbuilder'], function (Crafty, k) {
+  Crafty.c('Goal', {
+    init: function () {
+      this.requires('2D, Canvas, Color');
+      this.color('green');
+      console.log('Goal created.', this);
+    },
+  });
+
   Crafty.c('Impassable', {
     init: function () {
       this.requires('2D');
     },
   });
+
   Crafty.c('TileEmpty', {
     init: function () {
-      this.requires('2D, Canvas').attr({
+      this.requires('2D').attr({
         w: k.tileWidth,
         h: k.tileHeight,
       });
@@ -42,6 +51,10 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder'], function (Crafty, k) 
       })
       this.bind('LightTransition', this.showLight);
       this.bind('DarkTransition', this.showDark);
+      this.bind('EnterFrame', this.checkGoal);
+
+      this._lightDone = false;
+      this._darkDone = false;
     },
     showLight: function () {
       console.log("Light transition triggered.");
@@ -78,6 +91,18 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder'], function (Crafty, k) 
       });
 
       return this;
+    },
+    checkGoal: function () {
+      var lightGoal = Crafty('LightWorld Goal').get(0);
+      var darkGoal = Crafty('DarkWorld Goal').get(0);
+      
+      this._lightDone = lightGoal.contains(Crafty('DarkPlayer'));
+      this._darkDone = darkGoal.contains(Crafty('LightPlayer'));
+
+      if (this._lightDone && this._darkDone) {
+        console.log('Level complete.');
+        Crafty.scene(this._nextScene);
+      }
     },
     onComplete: function(nextScene) {
       // TODO: Call this when the map is complete.

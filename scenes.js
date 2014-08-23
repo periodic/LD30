@@ -39,15 +39,9 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
     });
   });
 
-  Crafty.scene('Test', function () {
-    require(['level1a', 'level1b', 'map'], function (lightMap, darkMap) {
-      buildLevel(lightMap, darkMap, 'insertNextLevelHere');
-    });
-  });
-
   Crafty.scene('Map_001', function () {
     require(['Dark Map 1', 'Light Map 1', 'map'], function (lightMap, darkMap) {
-      buildLevel(lightMap, darkMap, 'insertNextLevelHere');
+      buildLevel(lightMap, darkMap, 'Map_001');
     });
   });
 
