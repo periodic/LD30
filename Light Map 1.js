@@ -43,6 +43,30 @@ define ( { "height":20,
          "width":20,
          "x":0,
          "y":0
+        },
+        {
+         "height":20,
+         "name":"Start",
+         "objects":[
+                {
+                 "height":25,
+                 "name":"StartPosition",
+                 "properties":
+                    {
+
+                    },
+                 "type":"StartPosition",
+                 "visible":true,
+                 "width":25,
+                 "x":259,
+                 "y":226
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
         }],
  "orientation":"orthogonal",
  "properties":
@@ -70,7 +94,7 @@ define ( { "height":20,
          "firstgid":5,
          "image":"images\/tileset2.png",
          "imageheight":32,
-         "imagewidth":128,
+         "imagewidth":160,
          "margin":0,
          "name":"tileset2",
          "properties":

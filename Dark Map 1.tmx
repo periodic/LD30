@@ -4,7 +4,7 @@
   <image source="images/tileset.png" width="128" height="32"/>
  </tileset>
  <tileset firstgid="5" name="tileset2" tilewidth="32" tileheight="32">
-  <image source="images/tileset2.png" width="128" height="32"/>
+  <image source="images/tileset2.png" width="160" height="32"/>
  </tileset>
  <layer name="Ground" width="20" height="20">
   <data encoding="base64" compression="zlib">
@@ -22,4 +22,7 @@
    eJxjYBgFo2AUjIJRMApIBwAGQAAB
   </data>
  </layer>
+ <objectgroup name="Start" width="20" height="20">
+  <object name="StartPosition" type="StartPosition" x="258" y="226" width="27" height="27"/>
+ </objectgroup>
 </map>
