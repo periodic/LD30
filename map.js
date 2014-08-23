@@ -1,4 +1,18 @@
-define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
+define(['lib/crafty', 'constants', 'lib/tiledmapbuilder'], function (Crafty, k) {
+  Crafty.c('Impassable', {
+    init: function () {
+      this.requires('2D');
+    },
+  });
+  Crafty.c('TileEmpty', {
+    init: function () {
+      this.requires('2D, Canvas').attr({
+        w: k.tileWidth,
+        h: k.tileHeight,
+      });
+    },
+  });
+
   Crafty.c('World', {
     init: function () {
       this.requires('2D, Canvas, TiledMapBuilder');
@@ -22,7 +36,6 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
     init: function () {
       this.requires('2D,Keyboard');
       this.bind('KeyDown', function () {
-        console.log("Keydown");
         if (this.isDown('SPACE')) {
           this.swap();
         }
@@ -58,6 +71,10 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
       });
       this._dark._children.forEach(function (e) {
         e.addComponent('DarkWorld');
+      });
+
+      Crafty('Ground TileEmpty').each(function () { 
+        this.addComponent('Impassable');
       });
 
       return this;

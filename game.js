@@ -7,5 +7,5 @@ define(['constants', 'scenes'], function(k, scenes) {
   Crafty.viewport.init(k.canvasWidthPx, k.canvasHeightPx);
   Crafty.viewport.clampToEntities = true;
 
-  Crafty.scene(scenes.loading, scenes.test, ['level1a', 'level1b']);
+  Crafty.scene(scenes.loading, 'Map_001', ['level1a', 'level1b']);
 })
