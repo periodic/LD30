@@ -8,12 +8,13 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
       this._children.forEach(function (e) {
         e.visible = visibility;
       });
+      return this;
     },
     hide: function () {
-      this.shown(false);
+      return this.shown(false);
     },
     show: function () {
-      this.shown(true);
+      return this.shown(true);
     },
   });
 
@@ -25,22 +26,31 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
           this.swap();
         }
       })
+      this.bind('LightTransition', this.showLight);
+      this.bind('DarkTransition', this.showDark);
+    },
+    showLight: function () {
+      this._light.show();
+      this._dark.hide();
+      return this;
+    },
+    showDark: function () {
+      this._light.hide();
+      this._dark.show();
+      return this;
     },
     swap: function () {
-      this._dark.shown(this._light.visible);
-      this._light.shown(!this._light.visible);
+      Crafty.trigger(this._light.visible ? 'DarkTransition' : 'LightTransition');
+      return this;
     },
     doubleMap: function(mapData1, mapData2) {
       this._light = Crafty.e("World, LightWorld").setMapDataSource(mapData1);
       this._dark = Crafty.e("World, DarkWorld").setMapDataSource(mapData2);
 
-      this._light.createWorld(function (map) {
-        console.log("Created world 1.");
-      });
-      this._dark.createWorld(function (map) {
-        console.log("Created world 2.");
-      });
-      this._dark.hide();
+      this._light.createWorld(function (map) {});
+      this._dark.createWorld(function (map) {});
+
+      return this;
     },
   });
 });
