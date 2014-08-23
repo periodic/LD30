@@ -6,8 +6,8 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
   function buildLevel(lightMap, darkMap, nextScene) {
       var map = Crafty.e('DoubleMap').doubleMap(lightMap, darkMap);
 
-      var lightStart = Crafty.e('LightWorld StartPosition').addComponent('LightPlayer');
-      var darkStart = Crafty.e('DarkWorld StartPosition').addComponent('DarkPlayer');
+      var lightStart = Crafty('LightWorld StartPosition').addComponent('LightPlayer');
+      var darkStart = Crafty('DarkWorld StartPosition').addComponent('DarkPlayer');
 
       Crafty.trigger('LightTransition');
   }
