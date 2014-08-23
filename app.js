@@ -10,9 +10,9 @@ require.config({
     'lib/crafty': {
       exports: 'Crafty',
     },
-    'lib/Tiled/tiledmapbuilder': [
-      'lib/Tiled/modules/create_mocks_module',
+    'lib/tiledmapbuilder': [
       'lib/crafty',
+      'lib/create_mocks_module',
     ],
   },
 });
