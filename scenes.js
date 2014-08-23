@@ -8,14 +8,21 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
       .doubleMap(lightMap, darkMap)
       .onComplete(nextScene);
 
-    var lightStart = Crafty('LightWorld StartPosition').addComponent('LightPlayer');
-    var darkStart = Crafty('DarkWorld StartPosition').addComponent('DarkPlayer');
+    var lightStart = Crafty('LightWorld StartPosition');
+    Crafty.e('LightPlayer').attr({
+      x: lightStart.x,
+      y: lightStart.y,
+    });
+    var darkStart = Crafty('DarkWorld StartPosition');
+    Crafty.e('DarkPlayer').attr({
+      x: darkStart.x,
+      y: darkStart.y,
+    });
 
     Crafty.trigger('LightTransition');
   }
 
   Crafty.scene('Loading', function (nextScene, assetList) {
-    Crafty.background('black');
     var loadingText = Crafty.e('2D, Canvas, Text')
       .textFont({weight: 'bold', size: '20px', align: 'center'})
       .textColor('#FFFFFF')

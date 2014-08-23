@@ -20,8 +20,9 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
 
   Crafty.c('DoubleMap', {
     init: function () {
-      this.requires('Keyboard');
+      this.requires('2D,Keyboard');
       this.bind('KeyDown', function () {
+        console.log("Keydown");
         if (this.isDown('SPACE')) {
           this.swap();
         }
@@ -30,11 +31,13 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
       this.bind('DarkTransition', this.showDark);
     },
     showLight: function () {
+      console.log("Light transition triggered.");
       this._light.show();
       this._dark.hide();
       return this;
     },
     showDark: function () {
+      console.log("Dark transition triggered.");
       this._light.hide();
       this._dark.show();
       return this;
