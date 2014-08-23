@@ -108,4 +108,4 @@ define ({ "height":20,
  "tilewidth":32,
  "version":1,
  "width":20
-} )
+})
