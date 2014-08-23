@@ -50,7 +50,18 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
       this._light.createWorld(function (map) {});
       this._dark.createWorld(function (map) {});
 
+      this._light._children.forEach(function (e) {
+        e.addComponent('LightWorld');
+      });
+      this._dark._children.forEach(function (e) {
+        e.addComponent('DarkWorld');
+      });
+
       return this;
+    },
+    onComplete: function(nextScene) {
+      // TODO: Call this when the map is complete.
+      this._nextScene = nextScene;
     },
   });
 });
