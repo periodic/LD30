@@ -61,7 +61,7 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
     },
     onComplete: function(nextScene) {
       // TODO: Call this when the map is complete.
-      Crafty.scene(nextScene);
+      this._nextScene = nextScene;
     },
   });
 });
