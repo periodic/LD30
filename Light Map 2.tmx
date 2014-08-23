@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
+  <image source="images/tileset.png" width="128" height="32"/>
+ </tileset>
+ <tileset firstgid="5" name="tileset2" tilewidth="32" tileheight="32">
+  <image source="images/tileset2.png" width="160" height="32"/>
+ </tileset>
+ <tileset firstgid="10" name="tileset2" tilewidth="32" tileheight="32">
+  <image source="images/tileset2.png" width="160" height="32"/>
+ </tileset>
+ <layer name="Ground" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2DwABY0TA3zkM2l1CwWND4lgBOKkd1ICUDXTwvzKIkfasYrzDx0mlzzkfXhosk1jxWI2aE0JeYRsosYc6kdBwCIqwDQ
+  </data>
+ </layer>
+ <layer name="Interactible" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2DwAHYozUkl81ipZM4oGP6AnbASogG10u9gBwBibAAm
+  </data>
+ </layer>
+ <objectgroup name="Start" width="20" height="20">
+  <object name="StartPostition" type="StartPosition" x="1" y="608" width="29" height="30"/>
+ </objectgroup>
+ <objectgroup name="Goal" width="20" height="20">
+  <object x="357" y="417" width="23" height="28"/>
+ </objectgroup>
+</map>
