@@ -54,36 +54,62 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
 
   Crafty.c('PushableTop', {
     init: function () {
-      this.requires('2D, Canvas, Collision, MovableBlockTop')
-        .attr({
-          w: k.tileWidth,
-          h: k.tileHeight,
-        })
+      this.requires('2D, Canvas, Collision, MovableBlockTop, DynamicZ')
+          .dynamicZ(k.decorationZLayer)
+          .attr({
+            w: k.tileWidth,
+            h: k.tileHeight,
+          });
     },
   });
 
   Crafty.c('Pushable', {
     init: function () {
-      this.requires('2D, Canvas, Collision, MovableBlockBottom');
+      this.requires('2D, Canvas, Collision, DynamicZ, MovableBlockBottom')
+          .dynamicZ(k.interactiveZLayer)
+          .bind('Invalidate', this._invalidate);
       this._topSprite = Crafty.e('PushableTop')
         .attr({
           x: this.x,
           y: this.y - k.tileHeight,
         })
-        .bind('Invalidate', this._moved);
       this.attach(this._topSprite);
     },
-    _moved: function () {
-      log('Invalidate');
-      this.attr({
-        z: this._y + this._h,
-      });
-      log("block z", this.z);
-      if (this._topSprite) {
-        this._topSprite.attr({z: this._y + k.topLevelZbonus});
-        log("top z", this._topSprite.z);
+    _invalidate: function () {
+      if (this.hitInWorld) {
+        var holeCollisions = this.hitInWorld('Hole');
+        if (holeCollisions) {
+          log("I'm touching a hole!", holeCollisions);
+          var consumed = holeCollisions.reduce(function (block, collision) {
+            if (!block) return null;
+            if (Math.abs(collision.overlap) >= 28) {
+              collision.obj.consume(block);
+              return null;
+            }
+            return block;
+          }, this);
+
+          if (consumed) return;
+        }
       }
-      return this;
+    },
+  });
+
+  Crafty.c('Hole', {
+    init: function () {
+      this.requires('2D, Canvas, Collision, DynamicZ, ImpassablePlayerOnly')
+          .dynamicZ(k.decalZLayer);
+    },
+    consume: function (block) {
+      log("Nom, nom, blocks.", this, block);
+      if (this._world == 'LightWorld') {
+        this.addComponent('LightHoleFull');
+      } else {
+        this.addComponent('DarkHoleFull');
+      }
+      this.removeComponent('ImpassablePlayerOnly', 'DarkHoleEmpty', 'LightHoleEmpty');
+
+      block.destroy();
     },
   });
 });

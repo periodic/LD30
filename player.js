@@ -4,21 +4,20 @@
 define(['lib/crafty', 'constants'], function(Crafty, k) {
   Crafty.c('Player', {
     init: function () {
-      this.requires('2D, Canvas, Fourway, Collision')
+      this.requires('2D, Canvas, Fourway, Collision, DynamicZ')
         .attr({
           w: k.characterWidth,
           h: k.characterHeight,
         })
-        .fourway(2)
+        .fourway(2.5)
         .bind('Moved', this.movement)
-        .bind('Invalidate', this._updateZ)
         .collision(
           [k.characterCollision.xMin, k.characterCollision.yMin],
           [k.characterCollision.xMin, k.characterCollision.yMax],
           [k.characterCollision.xMax, k.characterCollision.yMax],
           [k.characterCollision.xMax, k.characterCollision.yMin]
           )
-        ._updateZ();
+        .dynamicZ(k.interactiveZLayer);
       this.bumpSound = limitSound('bump', 500);
 
       if (k.debug) {
@@ -28,20 +27,15 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
     _show: function () {
       this.alpha = 1.0;
       this.enableControl();
+      this.dynamicZ(k.interactiveZLayer);
     },
     _hide: function () {
       this.alpha = 0.6;
       this.disableControl();
-      this.z = this.z - 1;
-    },
-    _updateZ: function (newY) {
-      this.attr({
-        z: this._y + this._h,
-      });
-      return this;
+      this.dynamicZ(k.decalZLayer + 1);
     },
     movement: function (from) {
-      var collisions = this.hitInWorld('Impassable');
+      var collisions = this.hitInWorld('ImpassablePlayerOnly');
 
       if (collisions) {
         // Abort
@@ -73,6 +67,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
         if (!pathIsBlocked) {
           collisions.forEach(function (collision) {
             collision.obj.shift(shift_x, shift_y);
+            collision.obj.trigger('Moved');
           });
         } else {
           // Abort

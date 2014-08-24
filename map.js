@@ -7,11 +7,37 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
   Crafty.c('Impassable', {
     init: function () {
+      this.requires('2D, Collision, ImpassablePlayerOnly')
+          .collision();
+      if (k.debug) {
+        this.addComponent('WiredHitBox');
+      }
+    },
+  });
+
+  Crafty.c('ImpassablePlayerOnly', {
+    init: function () {
       this.requires('2D, Collision')
           .collision();
       if (k.debug) {
         this.addComponent('WiredHitBox');
       }
+    },
+  });
+
+  Crafty.c('DynamicZ', {
+    _zBonus: 0,
+    init: function () {
+      this.requires('2D')
+          .bind('Invalidate', this._updateZ);
+    },
+    dynamicZ: function (zBonus) {
+      this._zBonus = zBonus;
+      this._updateZ();
+      return this;
+    },
+    _updateZ: function () {
+      this.z = Math.floor(this._y + this._h + this._zBonus);
     },
   });
 
@@ -28,27 +54,11 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     init: function () {
       this.requires('2D, Canvas, TiledMapBuilder');
     },
-    /*
-    shown: function (visibility) {
-      this.visible = visibility;
-      this._children.forEach(function (e) {
-        e.visible = visibility;
-      });
-      return this;
-    },
-    hide: function () {
-      return this.shown(false);
-    },
-    show: function () {
-      return this.shown(true);
-    },
-    */
   });
 
   Crafty.c('WorldEntity', {
     init: function () {
       this._children.forEach(function (e) {
-        console.log(this);
         if (e.addComponent) {
           e.addComponent(this._world);
         }
@@ -143,10 +153,13 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
       this._light._children.forEach(function (e) {
         e.addComponent('LightWorld');
-        e.z = e.y;
       });
       this._dark._children.forEach(function (e) {
         e.addComponent('DarkWorld');
+      });
+
+      Crafty('Tile').each(function () {
+        this.z = this.y;
       });
 
       Crafty('Ground TileEmpty').each(function () {

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
+  <image source="../../../../src/js-games/LD30/images/tileset.png" width="128" height="64"/>
+ </tileset>
+ <tileset firstgid="9" name="props" tilewidth="32" tileheight="32">
+  <image source="../../../../src/js-games/LD30/images/tileset2.png" width="160" height="64"/>
+ </tileset>
+ <layer name="Background" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg+gJkAHgoAABKgABk=
+  </data>
+ </layer>
+ <layer name="Ground" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAesBDAtFLHQQAPJwAAqlAAoQ==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="10" height="10">
+  <object name="Goal" x="256" y="80" width="32" height="32"/>
+  <object name="StartPosition" x="32" y="80" width="32" height="32"/>
+  <object name="Block1" type="Pushable" gid="18" x="96" y="112"/>
+  <object type="Hole" gid="16" x="192" y="112"/>
+ </objectgroup>
+</map>
