@@ -3,7 +3,6 @@
  */
 define(['constants', 'scenes'], function(k, scenes) {
   Crafty.init(k.canvasWidthPx, k.canvasHeightPx);
-  Crafty.background('gray');
   Crafty.viewport.init(k.canvasWidthPx, k.canvasHeightPx);
   Crafty.viewport.clampToEntities = true;
 
