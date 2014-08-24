@@ -31,7 +31,7 @@ define({ "height":10,
          "name":"Goal",
          "objects":[
                 {
-                 "height":22,
+                 "height":44,
                  "name":"EndPosition",
                  "properties":
                     {
@@ -39,9 +39,9 @@ define({ "height":10,
                     },
                  "type":"EndPosition",
                  "visible":true,
-                 "width":31,
-                 "x":161,
-                 "y":67
+                 "width":62,
+                 "x":322,
+                 "y":134
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -66,7 +66,7 @@ define({ "height":10,
          "name":"Start",
          "objects":[
                 {
-                 "height":27,
+                 "height":50,
                  "name":"StartPosition",
                  "properties":
                     {
@@ -74,9 +74,9 @@ define({ "height":10,
                     },
                  "type":"StartPosition",
                  "visible":true,
-                 "width":27,
-                 "x":162,
-                 "y":194
+                 "width":50,
+                 "x":322,
+                 "y":388
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -101,13 +101,13 @@ define({ "height":10,
     {
 
     },
- "tileheight":32,
+ "tileheight":64,
  "tilesets":[
         {
          "firstgid":1,
          "image":"images\/tileset.png",
-         "imageheight":64,
-         "imagewidth":128,
+         "imageheight":128,
+         "imagewidth":256,
          "margin":0,
          "name":"tileset",
          "properties":
@@ -115,14 +115,14 @@ define({ "height":10,
 
             },
          "spacing":0,
-         "tileheight":32,
-         "tilewidth":32
+         "tileheight":64,
+         "tilewidth":64
         }, 
         {
          "firstgid":9,
          "image":"images\/tileset2.png",
-         "imageheight":32,
-         "imagewidth":160,
+         "imageheight":128,
+         "imagewidth":320,
          "margin":0,
          "name":"tileset2",
          "properties":
@@ -130,10 +130,10 @@ define({ "height":10,
 
             },
          "spacing":0,
-         "tileheight":32,
-         "tilewidth":32
+         "tileheight":64,
+         "tilewidth":64
         }],
- "tilewidth":32,
+ "tilewidth":64,
  "version":1,
  "width":10
-});
+})

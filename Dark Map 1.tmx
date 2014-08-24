@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
-  <image source="images/tileset.png" width="128" height="64"/>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="images/tileset.png" width="256" height="128"/>
  </tileset>
- <tileset firstgid="9" name="tileset2" tilewidth="32" tileheight="32">
-  <image source="images/tileset2.png" width="160" height="32"/>
+ <tileset firstgid="9" name="tileset2" tilewidth="64" tileheight="64">
+  <image source="images/tileset2.png" width="320" height="128"/>
  </tileset>
  <layer name="Ground" width="10" height="10">
   <data encoding="base64" compression="zlib">
@@ -20,7 +20,7 @@
   </data>
  </layer>
  <objectgroup name="Goal" width="10" height="10">
-  <object name="EndPosition" type="EndPosition" x="161" y="67" width="31" height="22"/>
+  <object name="EndPosition" type="EndPosition" x="322" y="134" width="62" height="44"/>
  </objectgroup>
  <layer name="Props" width="10" height="10">
   <data encoding="base64" compression="zlib">
@@ -28,7 +28,7 @@
   </data>
  </layer>
  <objectgroup name="Start" width="10" height="10">
-  <object name="StartPosition" type="StartPosition" x="162" y="194" width="27" height="27"/>
+  <object name="StartPosition" type="StartPosition" x="322" y="388" width="50" height="50"/>
  </objectgroup>
  <layer name="Background" width="10" height="10">
   <data encoding="base64" compression="zlib">
