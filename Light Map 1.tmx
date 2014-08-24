@@ -17,7 +17,7 @@
   </data>
  </layer>
  <objectgroup name="Goal" width="20" height="20">
-  <object x="246" y="86" width="49" height="51"/>
+  <object name="EndPosition" type="EndPosition" x="257" y="99" width="31" height="22"/>
  </objectgroup>
  <layer name="Trigger" width="20" height="20">
   <properties>
