@@ -3,11 +3,20 @@
  */
 define(['lib/crafty', 'constants'], function (Crafty, k) {
   // Images
-  Crafty.sprite('images/whiteguy.png', {
+  Crafty.sprite('images/fatcatwhite.png', {
     'LightGuy': [0, 0, k.characterWidth, k.characterHeight],
   });
-  Crafty.sprite('images/blackguy.png', {
+  Crafty.sprite('images/fatcatblack.png', {
     'DarkGuy': [0, 0, k.characterWidth, k.characterHeight],
+  });
+
+  Crafty.sprite(k.tileWidth, k.tileHeight, 'images/tileset2.png', {
+    'DarkHole': [0, 1],
+    'DarkHoleFull': [1, 1],
+    'LightHole': [2, 1],
+    'LightHoleFull': [3, 1],
+    'MovableBlockTop': [4, 0],
+    'MovableBlockBottom': [4, 1],
   });
   
   // Audio

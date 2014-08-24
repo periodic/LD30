@@ -11,16 +11,24 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       })
       .fourway(2)
       .bind('Moved', this.movement)
+      .bind('Invalidate', this._updateZ)
+      ._updateZ();
     },
-    show: function () {
+    _show: function () {
       this.alpha = 1.0;
-      this.z = k.activeZLayer;
       this.enableControl();
     },
-    hide: function () {
-      this.alpha = 0.3;
-      this.z = k.inactiveZLayer;
+    _hide: function () {
+      this.alpha = 0.6;
       this.disableControl();
+      this.z = this.z - 1;
+    },
+    _updateZ: function (newY) {
+      this.attr({
+        z: this._y + this._h,
+      });
+      log("player z", this.z);
+      return this;
     },
     movement: function (from) {
       var collisions = this.hitInWorld('Impassable');
@@ -59,20 +67,13 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
         }
       }
     },
-    stopMovement: function () {
-      this._speed = 0;
-      if (this._movement) {
-        this.x -= this._movement.x;
-        this.y -= this._movement.y;
-      }
-    },
   });
 
   Crafty.c('LightPlayer', {
     init: function () {
-      this.requires('Player, LightGuy, DarkWorld')
-        .bind('LightTransition', this.hide)
-        .bind('DarkTransition', this.show)
+      this.requires('Player, LightGuy, WorldEntity')
+        .bind('LightTransition', this._hide)
+        .bind('DarkTransition', this._show)
         .setName('LightGuy');
       this._world = 'DarkWorld';
     },
@@ -80,9 +81,9 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
 
   Crafty.c('DarkPlayer', {
     init: function () {
-      this.requires('Player, DarkGuy, LightWorld')
-        .bind('LightTransition', this.show)
-        .bind('DarkTransition', this.hide)
+      this.requires('Player, DarkGuy, WorldEntity')
+        .bind('LightTransition', this._show)
+        .bind('DarkTransition', this._hide)
         .setName('DarkGuy');
       this._world = 'LightWorld';
     },

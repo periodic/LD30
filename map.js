@@ -24,6 +24,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     init: function () {
       this.requires('2D, Canvas, TiledMapBuilder');
     },
+    /*
     shown: function (visibility) {
       this.visible = visibility;
       this._children.forEach(function (e) {
@@ -37,9 +38,18 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     show: function () {
       return this.shown(true);
     },
+    */
   });
 
   Crafty.c('WorldEntity', {
+    init: function () {
+      this._children.forEach(function (e) {
+        console.log(this);
+        if (e.addComponent) {
+          e.addComponent(this._world);
+        }
+      }, this);
+    },
     hitInWorld: function (component) {
       var collisions = this.hit(component);
 
@@ -53,13 +63,23 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
       }
       return false;
     },
+    hide: function () {
+      this.visible = false;
+      return self;
+    },
+    show: function () {
+      this.visible = true;
+      return self;
+    },
   });
 
   Crafty.c('DarkWorld', {
     playerType: 'LightPlayer',
     _world: 'DarkWorld',
     init: function () {
-      this.requires('WorldEntity');
+      this.requires('WorldEntity')
+        .bind('LightTransition', this.hide)
+        .bind('DarkTransition', this.show)
     },
     getPlayer: function () {
       return Crafty('LightPlayer').get(0);
@@ -70,7 +90,9 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     playerType: 'DarkPlayer',
     _world: 'LightWorld',
     init: function () {
-      this.requires('WorldEntity');
+      this.requires('WorldEntity')
+        .bind('LightTransition', this.show)
+        .bind('DarkTransition', this.hide)
     },
     getPlayer: function () {
       return Crafty('DarkPlayer').get(0);
@@ -94,16 +116,12 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     },
     showLight: function () {
       console.log("Light transition triggered.");
-      this._light.show();
-      this._dark.hide();
       Crafty.background('#373737');
       Crafty.viewport.follow(Crafty('DarkPlayer'), 0, 0);
       return this;
     },
     showDark: function () {
       console.log("Dark transition triggered.");
-      this._light.hide();
-      this._dark.show();
       Crafty.background('#373737');
       Crafty.viewport.follow(Crafty('LightPlayer'), 0, 0);
       return this;
@@ -121,9 +139,11 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
       this._light._children.forEach(function (e) {
         e.addComponent('LightWorld');
+        e.z = e.y;
       });
       this._dark._children.forEach(function (e) {
         e.addComponent('DarkWorld');
+        e.z = e.y;
       });
 
       Crafty('Ground TileEmpty').each(function () {

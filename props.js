@@ -1,7 +1,7 @@
 /*
  * Defines various environmental prop behaviors.
  */
-define(['lib/crafty', 'constants'], function(Crafty, k) {
+define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
   Crafty.c('ToggleBlock', {
     init: function () {
       this.requires('2D, Canvas, Impassable');
@@ -52,9 +52,38 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
     },
   });
 
+  Crafty.c('PushableTop', {
+    init: function () {
+      this.requires('2D, Canvas, Collision, MovableBlockTop')
+        .attr({
+          w: k.tileWidth,
+          h: k.tileHeight,
+        })
+    },
+  });
+
   Crafty.c('Pushable', {
     init: function () {
-      this.requires('2D, Collision');
+      this.requires('2D, Canvas, Collision, MovableBlockBottom');
+      this._topSprite = Crafty.e('PushableTop')
+        .attr({
+          x: this.x,
+          y: this.y - k.tileHeight,
+        })
+        .bind('Invalidate', this._moved);
+      this.attach(this._topSprite);
+    },
+    _moved: function () {
+      log('Invalidate');
+      this.attr({
+        z: this._y + this._h,
+      });
+      log("block z", this.z);
+      if (this._topSprite) {
+        this._topSprite.attr({z: this._y + k.topLevelZbonus});
+        log("top z", this._topSprite.z);
+      }
+      return this;
     },
   });
 });
