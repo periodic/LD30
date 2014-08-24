@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="15" height="15" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
-  <image source="images/tileset.png" width="128" height="32"/>
+  <image source="images/tileset.png" width="128" height="64"/>
  </tileset>
- <tileset firstgid="5" name="tileset2" tilewidth="32" tileheight="32">
+ <tileset firstgid="9" name="tileset2" tilewidth="32" tileheight="32">
   <image source="images/tileset2.png" width="160" height="32"/>
  </tileset>
- <tileset firstgid="10" name="tileset2" tilewidth="32" tileheight="32">
+ <tileset firstgid="14" name="tileset2" tilewidth="32" tileheight="32">
   <image source="images/tileset2.png" width="160" height="32"/>
  </tileset>
- <layer name="Ground" width="20" height="20">
+ <layer name="Ground" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DwACY0TA3zkM2l1CwmND41zEN2I6Xm4eNTwzxK4oea8QozD50m13xs8UBJvKCbR2k849NDir+pHQcAt4gAYQ==
+   eJzNkFEKACAIQ0XB+x+5AoVRltZXgxGSM3tEq7hb7eTg/qTRL5C/yXm/PGTV7PVNVswvWZQGPmWRkQTOdmaoK7yRMZ4V3v4GzplnZfsSrf/bsaow3LGqMPxJDbILAOg=
   </data>
  </layer>
- <layer name="Interactible" width="20" height="20">
+ <layer name="Interactible" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DwAHYqm8dKZfNGwfAF1E57MMAKNXs4pkUAR7QAJQ==
+   eJxjYMAE3FCaF4scIcBJhh5KATnuHKmAm7ASrAA5jDmh5gxEXA9HAADe1ABk
   </data>
  </layer>
- <objectgroup name="Start" width="20" height="20">
-  <object name="StartPosition" type="StartPosition" x="1" y="610" width="26" height="26"/>
+ <objectgroup name="Start" width="15" height="15">
+  <object name="StartPosition" type="StartPosition" x="33" y="354" width="26" height="26"/>
  </objectgroup>
- <objectgroup name="Goal" width="20" height="20">
-  <object name="EndPosition" type="EndPosition" x="356" y="418" width="26" height="27"/>
+ <objectgroup name="Goal" width="15" height="15">
+  <object name="EndPosition" type="EndPosition" x="388" y="162" width="26" height="27"/>
  </objectgroup>
 </map>
