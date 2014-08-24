@@ -91,6 +91,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
       this._lightDone = false;
       this._darkDone = false;
+      Crafty.audio.play("ambient", -1);
     },
     showLight: function () {
       console.log("Light transition triggered.");
