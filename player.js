@@ -5,14 +5,15 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
   Crafty.c('Player', {
     init: function () {
       this.requires('2D, Canvas, Fourway, Collision')
-      .attr({
-        w: k.characterWidth,
-        h: k.characterHeight,
-      })
-      .fourway(2)
-      .bind('Moved', this.movement)
-      .bind('Invalidate', this._updateZ)
-      ._updateZ();
+        .attr({
+          w: k.characterWidth,
+          h: k.characterHeight,
+        })
+        .fourway(2)
+        .bind('Moved', this.movement)
+        .bind('Invalidate', this._updateZ)
+        ._updateZ();
+      this.bumpSound = limitSound('bump', 500);
     },
     _show: function () {
       this.alpha = 1.0;
@@ -32,8 +33,16 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
     },
     movement: function (from) {
       var collisions = this.hitInWorld('Impassable');
+
       if (collisions) {
         // Abort
+        var collidingOnlyEmpties = collisions.every(function (collision) {
+          return collision.obj.has("TileEmpty");
+        })
+        if (!collidingOnlyEmpties){
+          this.bumpSound();
+        }
+
         this.attr({
           x: from.x,
           y: from.y,
@@ -41,7 +50,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
         return;
       }
 
-      var collisions = this.hitInWorld('Pushable');
+      collisions = this.hitInWorld('Pushable');
       if (collisions) {
         var shift_x = this.x - from.x;
         var shift_y = this.y - from.y;
