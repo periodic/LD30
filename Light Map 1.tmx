@@ -8,7 +8,7 @@
  </tileset>
  <layer name="Ground" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYKAdYAFiDiTMgkcdKxLGpw4fn1R1HFgwNsCKBdMKAABqkACJ
+   eJxjYKAdYAFiDiTMgkcdPj6t1HFgwQMNAFGQAGE=
   </data>
  </layer>
  <layer name="Interactible " width="10" height="10">
@@ -33,4 +33,9 @@
  <objectgroup name="Start" width="10" height="10">
   <object name="StartPosition" type="StartPosition" x="163" y="194" width="25" height="25"/>
  </objectgroup>
+ <layer name="Background" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgcgBUJDzbAigXTCgAAGpAAKQ==
+  </data>
+ </layer>
 </map>
