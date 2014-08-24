@@ -16,6 +16,10 @@ define({ "height":20,
          "height":20,
          "name":"Interactible ",
          "opacity":1,
+         "properties":
+            {
+             "triggerId":"trigger1"
+            },
          "type":"tilelayer",
          "visible":true,
          "width":20,
@@ -27,17 +31,17 @@ define({ "height":20,
          "name":"Goal",
          "objects":[
                 {
-                 "height":51,
-                 "name":"",
+                 "height":22,
+                 "name":"EndPosition",
                  "properties":
                     {
 
                     },
-                 "type":"",
+                 "type":"EndPosition",
                  "visible":true,
-                 "width":49,
-                 "x":246,
-                 "y":86
+                 "width":31,
+                 "x":257,
+                 "y":99
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -125,4 +129,4 @@ define({ "height":20,
  "tilewidth":32,
  "version":1,
  "width":20
-})
+});

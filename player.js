@@ -25,11 +25,17 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       this.disableControl();
     },
     movement: function (from) {
-      if (this.hit('Impassable')) {
-        this.attr({
-          x: from.x,
-          y: from.y,
-        });
+      collisions = this.hit('Impassable');
+      if (collisions) {
+        var inWorld = collisions.some(function (collision) {
+          return collision.obj.has(this._world);
+        }, this);
+        if (inWorld) {
+          this.attr({
+            x: from.x,
+            y: from.y,
+          });
+        }
       }
     },
     stopMovement: function () {
@@ -47,7 +53,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
         .bind('LightTransition', this.show)
         .bind('DarkTransition', this.hide)
         .setName('LightGuy');
-      this._world = 'LightWorld';
+      this._world = 'DarkWorld';
     },
   });
 
@@ -57,7 +63,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
         .bind('LightTransition', this.hide)
         .bind('DarkTransition', this.show)
         .setName('DarkGuy');
-      this._world = 'DarkWorld';
+      this._world = 'LightWorld';
     },
   });
 });

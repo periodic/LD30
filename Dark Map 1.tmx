@@ -11,7 +11,10 @@
    eJxjYBgFIMCEBVNqHj7+cDSPmuE3CkbBKBj8AACYQAAh
   </data>
  </layer>
- <layer name="Interactible" width="20" height="20">
+ <layer name="ToggleBlock" width="20" height="20">
+  <properties>
+   <property name="triggerId" value="trigger1"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFQwGwE+CPglEwCkYBvQEARiAADw==
   </data>

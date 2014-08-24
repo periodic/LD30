@@ -40,10 +40,8 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
   });
 
   Crafty.c('DarkWorld', {
+    playerType: 'LightPlayer',
     init: function () {
-    },
-    getPlayerType: function () {
-      return 'LightPlayer';
     },
     getPlayer: function () {
       return Crafty('LightPlayer').get(0);
@@ -51,10 +49,8 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
   });
 
   Crafty.c('LightWorld', {
+    playerType: 'DarkPlayer',
     init: function () {
-    },
-    getPlayerType: function () {
-      return 'DarkPlayer';
     },
     getPlayer: function () {
       return Crafty('DarkPlayer').get(0);
@@ -106,7 +102,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
         e.addComponent('DarkWorld');
       });
 
-      Crafty('Ground TileEmpty').each(function () { 
+      Crafty('Ground TileEmpty').each(function () {
         this.addComponent('Impassable');
       });
 
@@ -115,9 +111,9 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     checkGoal: function () {
       var lightGoal = Crafty('LightWorld Goal').get(0);
       var darkGoal = Crafty('DarkWorld Goal').get(0);
-      
-      this._lightDone = lightGoal.contains(Crafty('DarkPlayer'));
-      this._darkDone = darkGoal.contains(Crafty('LightPlayer'));
+
+      this._lightDone = lightGoal.intersect(Crafty('DarkPlayer'));
+      this._darkDone = darkGoal.intersect(Crafty('LightPlayer'));
 
       if (this._lightDone && this._darkDone) {
         console.log('Level complete.');

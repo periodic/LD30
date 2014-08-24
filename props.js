@@ -4,21 +4,33 @@
 define(['lib/crafty', 'constants'], function(Crafty, k) {
   Crafty.c('ToggleBlock', {
     init: function () {
-      this.requires('2D, Canvas'); // , Impassable');
-      if (this.properties && this.properties.triggerId) {
-        this.addComponent('Trigger_' + this.properties.triggerId);
+      this.requires('2D, Canvas, Impassable');
+      this._active = false;
+
+      this.properties = this.properties || {};
+      this.properties.tiggerId = k.globalTrigger;
+
+      this.bind('Signal', this.signalReceived);
+    },
+    signalReceived: function (signal, active) {
+      if (signal === this.properties.triggerId) {
+        if (active) {
+          this.deactivate();
+        } else {
+          this.activate();
+        }
       }
-      this.active = false;
-      console.log('Created toggleblock: ', this);
     },
     activate: function () {
+      console.log('Activating block.');
       this.removeComponent('Impassable');
-      this.active = true;
+      this._active = true;
       // TODO: Change appearance.
     },
     deactivate: function () {
+      console.log('Deactivating block.');
       this.addComponent('Impassable');
-      this.active = false;
+      this._active = false;
       // TODO: Change appearance.
     },
   });
@@ -28,24 +40,21 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       this.requires('2D, Collision')
         .bind('EnterFrame', this.checkForTrigger);
       this._active = false;
-      this._triggerId = this.properties && this.properties.triggerId
-                      ? this.properties.triggerId 
-                      : k.globalTrigger;
-      console.log('Created trigger: ', this);
+
+      this.properties = this.properties || {};
+      this.properties.tiggerId = k.globalTrigger;
     },
     checkForTrigger: function () {
-      if (!this._active && this.intersect(this.getPlayerType)) {
-        console.log('Triggering: ', this._triggerId);
-        Crafty('Trigger_' + this._triggerId).each(function () {
-          this.activate();
-        });
+      var shouldBeActive = this.intersect(this.getPlayer());
+      if (!this._active && shouldBeActive) {
+        console.log('Activating signal: ', this.properties.triggerId);
+        Crafty.trigger('Signal', this.properties.triggerId, true)
       }
-      if (this._active && !this.intersect(this.getPlayerType)) {
-        console.log('Untriggering: ', this._triggerId);
-        Crafty('Trigger_' + this._triggerId).each(function () {
-          this.deactivate();
-        });
+      if (this._active && !shouldBeActive) {
+        console.log('Deactivating signal: ',  this.properties.triggerId);
+        Crafty.trigger('Signal', this.properties.triggerId, true)
       }
+      this._active = shouldBeActive;
     },
   });
 });
