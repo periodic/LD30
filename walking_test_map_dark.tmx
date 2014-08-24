@@ -8,7 +8,7 @@
  </tileset>
  <layer name="Ground" width="10" height="25">
   <data encoding="base64" compression="zlib">
-   eJxjYMAETFjEsIFRdaPqRtXRTx0bkeqwAQBmWAA1
+   eJxjYCAfMI2qG1U3qo5u6tiIVIcNAABesAAz
   </data>
  </layer>
  <layer name="Background" width="10" height="25">
@@ -20,6 +20,6 @@
   <object name="StartPosition" x="321" y="1474" width="62" height="59"/>
  </objectgroup>
  <objectgroup name="Goal" width="10" height="25">
-  <object x="321" y="1" width="61" height="61"/>
+  <object x="321" y="63" width="61" height="61"/>
  </objectgroup>
 </map>

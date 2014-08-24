@@ -1,113 +1,25 @@
-define({ "height":25,
- "layers":[
-        {
-         "data":[0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-         "height":25,
-         "name":"Ground",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":10,
-         "x":0,
-         "y":0
-        },
-        {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0],
-         "height":25,
-         "name":"Background",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":10,
-         "x":0,
-         "y":0
-        },
-        {
-         "height":25,
-         "name":"StartPosition",
-         "objects":[
-                {
-                 "height":57,
-                 "name":"StartPosition",
-                 "properties":
-                    {
-
-                    },
-                 "type":"",
-                 "visible":true,
-                 "width":58,
-                 "x":322,
-                 "y":1474
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "width":10,
-         "x":0,
-         "y":0
-        },
-        {
-         "height":25,
-         "name":"Goal",
-         "objects":[
-                {
-                 "height":60,
-                 "name":"",
-                 "properties":
-                    {
-
-                    },
-                 "type":"",
-                 "visible":true,
-                 "width":62,
-                 "x":321,
-                 "y":2
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "width":10,
-         "x":0,
-         "y":0
-        }],
- "orientation":"orthogonal",
- "properties":
-    {
-
-    },
- "tileheight":64,
- "tilesets":[
-        {
-         "firstgid":1,
-         "image":"images\/tileset.png",
-         "imageheight":128,
-         "imagewidth":256,
-         "margin":0,
-         "name":"tileset",
-         "properties":
-            {
-
-            },
-         "spacing":0,
-         "tileheight":64,
-         "tilewidth":64
-        },
-        {
-         "firstgid":9,
-         "image":"images\/tileset2.png",
-         "imageheight":128,
-         "imagewidth":320,
-         "margin":0,
-         "name":"tileset2",
-         "properties":
-            {
-
-            },
-         "spacing":0,
-         "tileheight":64,
-         "tilewidth":64
-        }],
- "tilewidth":64,
- "version":1,
- "width":10
-})
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="25" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="images/tileset.png" width="256" height="128"/>
+ </tileset>
+ <tileset firstgid="9" name="tileset2" tilewidth="64" tileheight="64">
+  <image source="images/tileset2.png" width="320" height="128"/>
+ </tileset>
+ <layer name="Ground" width="10" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAfsIyqG1U3qo5u6jiIVIcNAAC4iABh
+  </data>
+ </layer>
+ <layer name="Background" width="10" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDCfAjEUMAAQkAAQ=
+  </data>
+ </layer>
+ <objectgroup name="StartPosition" width="10" height="25">
+  <object name="StartPosition" x="322" y="1474" width="58" height="57"/>
+ </objectgroup>
+ <objectgroup name="Goal" width="10" height="25">
+  <object x="321" y="68" width="62" height="60"/>
+ </objectgroup>
+</map>
