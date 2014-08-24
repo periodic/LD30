@@ -25,6 +25,13 @@ define(['lib/crafty', 'constants'], function (Crafty, k) {
     'LightGuy': [0, 0],
   });
 
+  Crafty.sprite(42, 94, 'images/portal-light.png', {
+    'LightPortal': [0,0],
+  });
+
+  Crafty.sprite(42, 94, 'images/portal-dark.png', {
+    'DarkPortal': [0,0],
+  });
 
   Crafty.sprite(k.tileWidth, k.tileHeight, 'images/tileset2.png', {
     'DarkHole': [0, 1],

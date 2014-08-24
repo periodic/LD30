@@ -27,5 +27,9 @@ define({
   },
   characterWalkAnimationDuration: 600, // ms
 
+  portalHeight: 64,
+  portalWidth: 42,
+  portalOffset: 32,
+
   levelFadeOut: 1500, // ms
 });

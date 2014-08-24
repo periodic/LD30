@@ -1,7 +1,27 @@
 define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Crafty, k) {
   Crafty.c('Goal', {
     init: function () {
-      this.requires('2D, Canvas');
+      this.requires('2D, Canvas, DynamicZ')
+          .dynamicZ(k.interactiveZLayer)
+          .bind('Invalidate', this._updateSprite);
+    },
+    _updateSprite: function () {
+      log("Invalidated portal");
+      var updated = false;
+      if (this._world == 'DarkWorld') {
+        log("Creating dark portal");
+        updated = true;
+        this.addComponent('DarkPortal');
+      }
+      if (this._world == 'LightWorld') {
+        log("Creating light portal");
+        updated = true;
+        this.addComponent('LightPortal');
+      }
+      if (updated) {
+        this.unbind('Invalidate', this._updateSprite);
+        this.y = this.y - k.portalOffset;
+      }
     },
   });
 
@@ -190,6 +210,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
         Crafty('Player').each(function () {
           this.disableControl();
+          this.pauseAnimation();
         });
 
         setTimeout(function () {
