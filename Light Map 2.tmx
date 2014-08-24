@@ -4,10 +4,10 @@
   <image source="images/tileset.png" width="128" height="64"/>
  </tileset>
  <tileset firstgid="9" name="tileset2" tilewidth="32" tileheight="32">
-  <image source="images/tileset2.png" width="160" height="32"/>
+  <image source="images/tileset2.png" width="160" height="64"/>
  </tileset>
- <tileset firstgid="14" name="tileset2" tilewidth="32" tileheight="32">
-  <image source="images/tileset2.png" width="160" height="32"/>
+ <tileset firstgid="19" name="tileset2" tilewidth="32" tileheight="32">
+  <image source="images/tileset2.png" width="160" height="64"/>
  </tileset>
  <layer name="Ground" width="15" height="15">
   <data encoding="base64" compression="zlib">
@@ -16,7 +16,7 @@
  </layer>
  <layer name="Interactible" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBhcgHOgHTAKaA740OiRDgA7aAAm
+   eJxjYBgFo2BggPBAO2CQAAAXHAAU
   </data>
  </layer>
  <objectgroup name="Start" width="15" height="15">
@@ -49,6 +49,23 @@
   <object name="Block3" type="ToggleBlock" gid="11" x="256" y="352" width="32" height="32">
    <properties>
     <property name="triggerId" value="light3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Triggers" width="15" height="15">
+  <object name="Trigger1" type="Trigger" gid="9" x="192" y="96" width="32" height="32">
+   <properties>
+    <property name="triggerId" value="dark1"/>
+   </properties>
+  </object>
+  <object name="Trigger2" type="Trigger" gid="9" x="224" y="352" width="32" height="32">
+   <properties>
+    <property name="triggerId" value="dark2"/>
+   </properties>
+  </object>
+  <object name="Trigger3" type="Trigger" gid="9" x="288" y="352" width="32" height="32">
+   <properties>
+    <property name="triggerId" value="dark3"/>
    </properties>
   </object>
  </objectgroup>
