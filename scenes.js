@@ -16,7 +16,7 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
     var darkStart = Crafty('DarkWorld StartPosition');
     Crafty.e('LightPlayer').attr({
       x: darkStart.x,
-      y: darkStart.y,Light
+      y: darkStart.y,
     });
 
     Crafty.trigger('DarkTransition');
