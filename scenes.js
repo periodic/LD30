@@ -44,6 +44,7 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
       z: darkGoal.y + darkGoal.h,
     });
 
+    Crafty.background('#373737');
     Crafty.trigger(transition + 'Transition');
     Crafty.audio.play("zone_in");
   }

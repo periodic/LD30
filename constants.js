@@ -37,6 +37,8 @@ define({
   },
   portalOffset: 32,
 
+  worldTransitionTime: 250, // ms
+  worldFadeTime: 125, // ms
   levelFadeOut: 1500, // ms
 
   debug: false,
