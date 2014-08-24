@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="15" height="15" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
-  <image source="images/tileset.png" width="128" height="64"/>
+<map version="1.0" orientation="orthogonal" width="15" height="15" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="images/tileset.png" width="256" height="128"/>
  </tileset>
- <tileset firstgid="9" name="tileset2" tilewidth="32" tileheight="32">
-  <image source="images/tileset2.png" width="160" height="32"/>
+ <tileset firstgid="9" name="tileset2" tilewidth="64" tileheight="64">
+  <image source="images/tileset2.png" width="320" height="128"/>
  </tileset>
- <tileset firstgid="14" name="tileset2" tilewidth="32" tileheight="32">
-  <image source="images/tileset2.png" width="160" height="32"/>
+ <tileset firstgid="14" name="tileset2" tilewidth="64" tileheight="64">
+  <image source="images/tileset2.png" width="320" height="128"/>
  </tileset>
  <layer name="Ground" width="15" height="15">
   <data encoding="base64" compression="zlib">
@@ -20,10 +20,10 @@
   </data>
  </layer>
  <objectgroup name="Start" width="15" height="15">
-  <object name="StartPosition" type="StartPosition" x="65" y="386" width="26" height="26"/>
+  <object name="StartPostition" type="StartPosition" x="130" y="768" width="60" height="60"/>
  </objectgroup>
  <objectgroup name="Goal" width="15" height="15">
-  <object name="EndPosition" type="EndPosition" x="420" y="194" width="26" height="27"/>
+  <object name="EndPosition" type="EndPosition" x="842" y="386" width="60" height="60"/>
  </objectgroup>
  <layer name="Background" width="15" height="15">
   <data encoding="base64" compression="zlib">
@@ -36,17 +36,17 @@
   </data>
  </layer>
  <objectgroup name="Triggers" width="15" height="15">
-  <object name="Trigger1" type="Trigger" gid="11" x="160" y="320" width="32" height="32">
+  <object name="Trigger1" type="Trigger" gid="11" x="320" y="640" width="64" height="64">
    <properties>
     <property name="triggerId" value="light1"/>
    </properties>
   </object>
-  <object name="Trigger2" type="Trigger" gid="11" x="192" y="64" width="32" height="32">
+  <object name="Trigger2" type="Trigger" gid="11" x="384" y="128" width="64" height="64">
    <properties>
     <property name="triggerId" value="light2"/>
    </properties>
   </object>
-  <object name="Trigger3" type="Trigger" gid="0" x="256" y="352">
+  <object name="Trigger3" type="Trigger" gid="11" x="512" y="704" width="64" height="64">
    <properties>
     <property name="triggerId" value="light3"/>
    </properties>

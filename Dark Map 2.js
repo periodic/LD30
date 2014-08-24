@@ -12,7 +12,7 @@ define({ "height":15,
          "y":0
         }, 
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 11, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":15,
          "name":"Interactible",
          "opacity":1,
@@ -27,17 +27,17 @@ define({ "height":15,
          "name":"Start",
          "objects":[
                 {
-                 "height":26,
-                 "name":"StartPosition",
+                 "height":60,
+                 "name":"StartPostition",
                  "properties":
                     {
 
                     },
                  "type":"StartPosition",
                  "visible":true,
-                 "width":26,
-                 "x":65,
-                 "y":386
+                 "width":60,
+                 "x":130,
+                 "y":768
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -51,7 +51,7 @@ define({ "height":15,
          "name":"Goal",
          "objects":[
                 {
-                 "height":27,
+                 "height":60,
                  "name":"EndPosition",
                  "properties":
                     {
@@ -59,9 +59,9 @@ define({ "height":15,
                     },
                  "type":"EndPosition",
                  "visible":true,
-                 "width":26,
-                 "x":420,
-                 "y":194
+                 "width":60,
+                 "x":842,
+                 "y":386
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -98,21 +98,21 @@ define({ "height":15,
          "objects":[
                 {
                  "gid":11,
-                 "height":32,
-                 "name":"Block1",
+                 "height":64,
+                 "name":"Trigger1",
                  "properties":
                     {
                      "triggerId":"light1"
                     },
                  "type":"Trigger",
                  "visible":true,
-                 "width":32,
-                 "x":160,
-                 "y":320
+                 "width":64,
+                 "x":320,
+                 "y":640
                 }, 
                 {
                  "gid":11,
-                 "height":32,
+                 "height":64,
                  "name":"Trigger2",
                  "properties":
                     {
@@ -120,10 +120,35 @@ define({ "height":15,
                     },
                  "type":"Trigger",
                  "visible":true,
-                 "width":32,
-                 "x":192,
-                 "y":64
+                 "width":64,
+                 "x":384,
+                 "y":128
+                }, 
+                {
+                 "gid":11,
+                 "height":64,
+                 "name":"Trigger3",
+                 "properties":
+                    {
+                     "triggerId":"light3"
+                    },
+                 "type":"Trigger",
+                 "visible":true,
+                 "width":64,
+                 "x":512,
+                 "y":704
                 }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":15,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":15,
+         "name":"Blocks",
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -136,13 +161,13 @@ define({ "height":15,
     {
 
     },
- "tileheight":32,
+ "tileheight":64,
  "tilesets":[
         {
          "firstgid":1,
          "image":"images\/tileset.png",
-         "imageheight":64,
-         "imagewidth":128,
+         "imageheight":128,
+         "imagewidth":256,
          "margin":0,
          "name":"tileset",
          "properties":
@@ -150,14 +175,14 @@ define({ "height":15,
 
             },
          "spacing":0,
-         "tileheight":32,
-         "tilewidth":32
+         "tileheight":64,
+         "tilewidth":64
         }, 
         {
          "firstgid":9,
          "image":"images\/tileset2.png",
-         "imageheight":32,
-         "imagewidth":160,
+         "imageheight":128,
+         "imagewidth":320,
          "margin":0,
          "name":"tileset2",
          "properties":
@@ -165,14 +190,14 @@ define({ "height":15,
 
             },
          "spacing":0,
-         "tileheight":32,
-         "tilewidth":32
+         "tileheight":64,
+         "tilewidth":64
         }, 
         {
-         "firstgid":14,
+         "firstgid":19,
          "image":"images\/tileset2.png",
-         "imageheight":32,
-         "imagewidth":160,
+         "imageheight":128,
+         "imagewidth":320,
          "margin":0,
          "name":"tileset2",
          "properties":
@@ -180,10 +205,10 @@ define({ "height":15,
 
             },
          "spacing":0,
-         "tileheight":32,
-         "tilewidth":32
+         "tileheight":64,
+         "tilewidth":64
         }],
- "tilewidth":32,
+ "tilewidth":64,
  "version":1,
  "width":15
 })
