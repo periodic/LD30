@@ -12,12 +12,12 @@ define({
   canvasHeightPx: 8 * 64,
 
   groundZLayer: 0,
-  decalZLayer: 32,
-  interactiveZLayer: 64,
-  decorationZLayer: 100,
+  decalZLayer: 64,
+  interactiveZLayer: 128,
+  decorationZLayer: 256,
 
   characterSpeed: 4, // px / frame
-  characterWidth: 42,
+  characterWidth: 40,
   characterHeight: 68,
   characterCollision: {
     xMin: 0,

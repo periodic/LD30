@@ -4,13 +4,14 @@
 define(['lib/crafty', 'constants'], function(Crafty, k) {
   Crafty.c('Player', {
     init: function () {
-      this.requires('2D, Canvas, Fourway, Collision, DynamicZ')
+      this.requires('2D, Canvas, Fourway, Collision, SpriteAnimation, DynamicZ')
         .attr({
           w: k.characterWidth,
           h: k.characterHeight,
         })
         .fourway(k.characterSpeed)
         .bind('Moved', this.movement)
+        .bind('NewDirection', this._newDirection)
         .collision(
           [k.characterCollision.xMin, k.characterCollision.yMin],
           [k.characterCollision.xMin, k.characterCollision.yMax],
@@ -24,15 +25,49 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
         this.addComponent('WiredHitBox');
       }
     },
+    _initAnimations: function () {
+      this.reel('WalkS', 500, [
+            [0,0], [1,0], [2,0], [3,0], [4,0], [5,0],
+          ])
+          .reel('WalkW', 500, [
+            [0,1], [1,1], [2,1], [3,1], [4,1], [5,1],
+          ])
+          .reel('WalkE', 500, [
+            [0,2], [1,2], [2,2], [3,2], [4,2], [5,2],
+          ])
+          .reel('WalkN', 500, [
+            [0,3], [1,3], [2,3], [3,3], [4,3], [5,3],
+          ]);
+    },
     _show: function () {
-      this.alpha = 1.0;
+      this.visible = true;
       this.enableControl();
       this.dynamicZ(k.interactiveZLayer);
     },
     _hide: function () {
-      this.alpha = 0.6;
+      this.visible = false;
       this.disableControl();
       this.dynamicZ(k.decalZLayer + 1);
+    },
+    _newDirection: function (direction) {
+      this.pauseAnimation();
+      if (direction.x == 0 && direction.y == 0) return;
+
+      if (Math.abs(direction.x) > Math.abs(direction.y)) {
+        // X is dominant.
+        if (direction.x > 0) {
+          this.animate('WalkE', -1);
+        } else {
+          this.animate('WalkW', -1);
+        }
+      } else {
+        // Y is dominant.
+        if (direction.y > 0) {
+          this.animate('WalkS', -1);
+        } else {
+          this.animate('WalkN', -1);
+        }
+      }
     },
     movement: function (from) {
       var collisions = this.hitInWorld('ImpassablePlayerOnly');
@@ -86,7 +121,8 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       this.requires('Player, LightGuy, WorldEntity')
         .bind('LightTransition', this._hide)
         .bind('DarkTransition', this._show)
-        .setName('LightGuy');
+        .setName('LightGuy')
+        ._initAnimations();
       this._world = 'DarkWorld';
     },
   });
@@ -96,7 +132,8 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       this.requires('Player, DarkGuy, WorldEntity')
         .bind('LightTransition', this._show)
         .bind('DarkTransition', this._hide)
-        .setName('DarkGuy');
+        .setName('DarkGuy')
+        ._initAnimations();
       this._world = 'LightWorld';
     },
   });

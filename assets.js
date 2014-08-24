@@ -17,12 +17,14 @@ function limitSound(sound_id, delay_ms) {
 // Defines needed assets
 define(['lib/crafty', 'constants'], function (Crafty, k) {
   // Images
-  Crafty.sprite('images/fatcatwhite.png', {
-    'LightGuy': [0, 0, k.characterWidth, k.characterHeight],
+  Crafty.sprite(42, 72, 'images/fatblackcat-walk.png', {
+    'DarkGuy': [0, 0],
   });
-  Crafty.sprite('images/fatcatblack.png', {
-    'DarkGuy': [0, 0, k.characterWidth, k.characterHeight],
+
+  Crafty.sprite(42, 68, 'images/fatwhitecat-walk.png', {
+    'LightGuy': [0, 0],
   });
+
 
   Crafty.sprite(k.tileWidth, k.tileHeight, 'images/tileset2.png', {
     'DarkHole': [0, 1],
