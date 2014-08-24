@@ -4,7 +4,8 @@
 define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
   Crafty.c('ToggleBlock', {
     init: function () {
-      this.requires('2D, Canvas, Impassable');
+      this.requires('2D, Canvas, Impassable, DynamicZ')
+          .dynamicZ(k.interactiveZLayer);
       this._active = false;
 
       this.properties = this.properties || {};
@@ -15,15 +16,18 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
     },
     activate: function (signal) {
       if (signal != this.properties.triggerId) return;
-      console.log('Activating block.');
-      this.removeComponent('Impassable');
+      console.log('Activating block.', this);
+      this.removeComponent('Impassable')
+          .removeComponent('ImpassablePlayerOnly')
+          .dynamicZ(k.decalZLayer);
       this._active = true;
       // TODO: Change appearance.
     },
     deactivate: function (signal) {
       if (signal != this.properties.triggerId) return;
       console.log('Deactivating block.');
-      this.addComponent('Impassable');
+      this.addComponent('Impassable')
+          .dynamicZ(k.interactiveZLayer);
       this._active = false;
       // TODO: Change appearance.
     },
@@ -31,8 +35,9 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
 
   Crafty.c('Trigger', {
     init: function () {
-      this.requires('2D, Collision')
-        .bind('EnterFrame', this.checkForTrigger);
+      this.requires('2D, Collision, DynamicZ')
+          .dynamicZ(k.decalZLayer)
+          .bind('EnterFrame', this.checkForTrigger);
       this._active = false;
 
       this.properties = this.properties || {};
@@ -107,7 +112,9 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
       } else {
         this.addComponent('DarkHoleFull');
       }
-      this.removeComponent('ImpassablePlayerOnly', 'DarkHoleEmpty', 'LightHoleEmpty');
+      this.removeComponent('ImpassablePlayerOnly')
+          .removeComponent('DarkHoleEmpty')
+          .removeComponent('LightHoleEmpty');
 
       block.destroy();
     },
