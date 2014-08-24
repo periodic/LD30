@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="20" height="25" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
-  <image source="images/tileset.png" width="128" height="32"/>
+  <image source="images/tileset.png" width="128" height="64"/>
  </tileset>
- <tileset firstgid="5" name="tileset2" tilewidth="32" tileheight="32">
+ <tileset firstgid="9" name="tileset2" tilewidth="32" tileheight="32">
   <image source="images/tileset2.png" width="160" height="32"/>
  </tileset>
- <tileset firstgid="10" name="tileset2" tilewidth="32" tileheight="32">
+ <tileset firstgid="14" name="tileset2" tilewidth="32" tileheight="32">
   <image source="images/tileset2.png" width="160" height="32"/>
  </tileset>
- <layer name="Ground" width="20" height="20">
+ <layer name="Ground" width="20" height="25">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DwACY0TA3zkM2l1CwmND41zEN2I6Xm4eNTwzxK4oea8QozD50m13xs8UBJvKCbR2k849NDir+pHQcAt4gAYQ==
+   eJxjYBgFo2DwACY0TA3zkM2l1CwmND41zEN2I6Xm4eNTwzxK4oea8QozD50m13xs8UBJvKCbR2k849NDir+pHQejYHABAE8nAGE=
   </data>
  </layer>
- <layer name="Interactible" width="20" height="20">
+ <layer name="Interactible" width="20" height="25">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DwAHYqm8dKZfNGwfAF1E57MMAKNXs4pkUAR7QAJQ==
+   eJztkkEKACAIBAVBkOj/382gwEOHrA06OLB0icFaiZLkH4pFLBXkUwsPJxIGOPobhfCzvUIWOXFMeJEoiB4mBej3+6vDrZdOdqf/r0gfO3cjfdx0l+BpQqEBAA==
   </data>
  </layer>
- <objectgroup name="Start" width="20" height="20">
+ <objectgroup name="Start" width="20" height="25">
   <object name="StartPosition" type="StartPosition" x="1" y="610" width="26" height="26"/>
  </objectgroup>
- <objectgroup name="Goal" width="20" height="20">
+ <objectgroup name="Goal" width="20" height="25">
   <object name="EndPosition" type="EndPosition" x="356" y="418" width="26" height="27"/>
  </objectgroup>
+ <layer name="Background" width="20" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4B4wD7QDhgFo2AUjIJRgBUAAC8wAAg=
+  </data>
+ </layer>
 </map>

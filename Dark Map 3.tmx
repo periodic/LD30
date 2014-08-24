@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="20" height="25" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
-  <image source="images/tileset.png" width="128" height="32"/>
+  <image source="images/tileset.png" width="128" height="64"/>
  </tileset>
- <tileset firstgid="5" name="tileset2" tilewidth="32" tileheight="32">
+ <tileset firstgid="9" name="tileset2" tilewidth="32" tileheight="32">
   <image source="images/tileset2.png" width="160" height="32"/>
  </tileset>
  <layer name="Ground" width="20" height="25">
   <data encoding="base64" compression="zlib">
-   eJxjYKA+YELC1DIPmaaGeeiYmuZSC1DTLJh56GZSYge2cKSFm0fNG17mMeFgU2IeNdPfYAyzUfNGjnmUAACWTwBV
+   eJztkkEKQCEIBbXA+x/5t0iS6G9yoBYNPJIWg5YiPKXF+kn5FPSZjP681wwqoz/rNYHPTeHzzne7rN4x46uLUH/uPN95X/mpMz4LIXwaQvhInu8uH7FzkczOfQERAJ0=
   </data>
  </layer>
  <layer name="Interactible" width="20" height="25">
   <data encoding="base64" compression="zlib">
-   eJxjYBjZgHWgHTAMACcQs9PI7JEWP6P+HXhAq7Q8WMFg9y8nlc0b7P6lBAAA8owAQw==
+   eJxjYBjZgHOgHTAMAC8Qc9PI7JEWP6P+HXhAq7Q8WMFg9y8vlc0b7P6lBAAAh2sAaw==
   </data>
  </layer>
  <objectgroup name="Start" width="20" height="25">
