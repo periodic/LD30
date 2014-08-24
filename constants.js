@@ -10,4 +10,5 @@ define({
   inactiveZLayer: 100,
   tileWidth: 32,
   tileHeight: 32,
+  globalTrigger: 'Global',
 });

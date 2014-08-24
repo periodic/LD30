@@ -1,9 +1,7 @@
-define(['lib/crafty', 'constants', 'lib/tiledmapbuilder'], function (Crafty, k) {
+define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Crafty, k) {
   Crafty.c('Goal', {
     init: function () {
-      this.requires('2D, Canvas, Color');
-      this.color('green');
-      console.log('Goal created.', this);
+      this.requires('2D, Canvas');
     },
   });
 
@@ -38,6 +36,28 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder'], function (Crafty, k) 
     },
     show: function () {
       return this.shown(true);
+    },
+  });
+
+  Crafty.c('DarkWorld', {
+    init: function () {
+    },
+    getPlayerType: function () {
+      return 'LightPlayer';
+    },
+    getPlayer: function () {
+      return Crafty('LightPlayer').get(0);
+    },
+  });
+
+  Crafty.c('LightWorld', {
+    init: function () {
+    },
+    getPlayerType: function () {
+      return 'DarkPlayer';
+    },
+    getPlayer: function () {
+      return Crafty('DarkPlayer').get(0);
     },
   });
 

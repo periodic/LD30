@@ -9,12 +9,12 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
       .onComplete(nextScene);
 
     var lightStart = Crafty('LightWorld StartPosition');
-    Crafty.e('LightPlayer').attr({
+    Crafty.e('DarkPlayer').attr({
       x: lightStart.x,
       y: lightStart.y,
     });
     var darkStart = Crafty('DarkWorld StartPosition');
-    Crafty.e('DarkPlayer').attr({
+    Crafty.e('LightPlayer').attr({
       x: darkStart.x,
       y: darkStart.y,
     });

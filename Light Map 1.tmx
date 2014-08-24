@@ -19,9 +19,12 @@
  <objectgroup name="Goal" width="20" height="20">
   <object x="246" y="86" width="49" height="51"/>
  </objectgroup>
- <layer name="Prop" width="20" height="20">
+ <layer name="Trigger" width="20" height="20">
+  <properties>
+   <property name="triggerId" value="trigger1"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApIBwAGQAAB
+   eJxjYBgFQwGwE+CPglEwCkYBvQEARiAADw==
   </data>
  </layer>
  <objectgroup name="Start" width="20" height="20">
