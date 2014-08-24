@@ -16,7 +16,7 @@
  </layer>
  <layer name="Interactible" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBhcgHOgHTAKaA5AcczNMBrXMAAAPHQAJw==
+   eJxjYBhcgHOgHTAKaA440eiRDgAw8AAc
   </data>
  </layer>
  <objectgroup name="Start" width="15" height="15">
@@ -36,7 +36,7 @@
   </data>
  </layer>
  <objectgroup name="Triggers" width="15" height="15">
-  <object name="Block1" type="Trigger" gid="11" x="160" y="320" width="32" height="32">
+  <object name="Trigger1" type="Trigger" gid="11" x="160" y="320" width="32" height="32">
    <properties>
     <property name="triggerId" value="light1"/>
    </properties>
@@ -46,5 +46,11 @@
     <property name="triggerId" value="light2"/>
    </properties>
   </object>
+  <object name="Trigger3" type="Trigger" gid="0" x="256" y="352">
+   <properties>
+    <property name="triggerId" value="light3"/>
+   </properties>
+  </object>
  </objectgroup>
+ <objectgroup name="Blocks" width="15" height="15"/>
 </map>
