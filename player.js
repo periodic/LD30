@@ -26,16 +26,16 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       }
     },
     _initAnimations: function () {
-      this.reel('WalkS', 500, [
+      this.reel('WalkS', k.characterWalkAnimationDuration, [
             [0,0], [1,0], [2,0], [3,0], [4,0], [5,0],
           ])
-          .reel('WalkW', 500, [
+          .reel('WalkW', k.characterWalkAnimationDuration, [
             [0,1], [1,1], [2,1], [3,1], [4,1], [5,1],
           ])
-          .reel('WalkE', 500, [
+          .reel('WalkE', k.characterWalkAnimationDuration, [
             [0,2], [1,2], [2,2], [3,2], [4,2], [5,2],
           ])
-          .reel('WalkN', 500, [
+          .reel('WalkN', k.characterWalkAnimationDuration, [
             [0,3], [1,3], [2,3], [3,3], [4,3], [5,3],
           ]);
     },
