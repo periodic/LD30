@@ -1,7 +1,7 @@
 /*
  * Defines scenes and scene-specific setup and state.
  */
-define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
+define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, k) {
 
   /*
    * Creates a map, places characters and does the initial map transition.
@@ -106,26 +106,32 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
   });
 
   Crafty.scene('Test', function () {
-    require(['Light Test', 'Dark Test', 'map'], function (lightMap, darkMap) {
+    require(['Light Test', 'Dark Test'], function (lightMap, darkMap) {
       buildLevel(lightMap, darkMap, 'Victory');
     });
   });
 
   Crafty.scene('Map_001', function () {
-    require(['Light Map 1', 'Dark Map 1', 'map'], function (lightMap, darkMap) {
+    require(['Light Map 1', 'Dark Map 1'], function (lightMap, darkMap) {
       buildLevel(lightMap, darkMap, 'Map_002');
     });
   });
 
   Crafty.scene('Map_002', function () {
-    require(['Light Map 2', 'Dark Map 2', 'map'], function (lightMap, darkMap) {
+    require(['Light Map 2', 'Dark Map 2'], function (lightMap, darkMap) {
       buildLevel(lightMap, darkMap, 'Map_003');
     });
   });
 
   Crafty.scene('Map_003', function () {
-    require(['Light Map 3', 'Dark Map 3', 'map'], function (lightMap, darkMap) {
+    require(['Light Map 3', 'Dark Map 3'], function (lightMap, darkMap) {
       buildLevel(lightMap, darkMap, 'Victory');
+    });
+  });
+
+  Crafty.scene('LongWalk', function () {
+    require(['LongWalkLight', 'LongWalkDark'], function (lightMap, darkMap) {
+      buildLevel(lightMap, darkMap, 'Victory', 'Light');
     });
   });
 

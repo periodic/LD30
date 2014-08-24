@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="20" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="ground" tilewidth="64" tileheight="64">
+  <image source="../../../../src/js-games/LD30/images/tileset.png" width="256" height="128"/>
+ </tileset>
+ <tileset firstgid="9" name="props" tilewidth="64" tileheight="64">
+  <image source="../../../../src/js-games/LD30/images/tileset2.png" width="320" height="128"/>
+ </tileset>
+ <layer name="Background" width="10" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AU4AIAAyAAAQ==
+  </data>
+ </layer>
+ <layer name="Ground" width="10" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYKA+YEHC1FLHDMWE1BEDRtWNqgMBQukJBACmoABe
+  </data>
+ </layer>
+ <objectgroup name="Props" width="10" height="20">
+  <object name="Goal" type="Goal" x="160" y="160" width="64" height="64"/>
+  <object name="Start" type="StartPosition" x="64" y="1152" width="64" height="64"/>
+  <object name="The Block" type="Pushable" gid="18" x="64" y="1092"/>
+ </objectgroup>
+ <objectgroup name="ToggleBlock" width="10" height="20">
+  <object gid="12" x="64" y="1024" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="block1"/>
+   </properties>
+  </object>
+  <object gid="12" x="64" y="832" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="block2"/>
+   </properties>
+  </object>
+  <object gid="12" x="64" y="640" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="block3"/>
+   </properties>
+  </object>
+  <object gid="12" x="64" y="448" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="block4"/>
+   </properties>
+  </object>
+  <object gid="12" x="64" y="256" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="block5"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

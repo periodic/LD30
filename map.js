@@ -210,7 +210,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
         Crafty('Player').each(function () {
           this.disableControl();
-          this.pauseAnimation();
+          this.animate('Spin', -1);
         });
 
         setTimeout(function () {
