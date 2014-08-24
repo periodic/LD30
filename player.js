@@ -25,7 +25,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       this.disableControl();
     },
     movement: function (from) {
-      collisions = this.hit('Impassable');
+      var collisions = this.hit('Impassable');
       if (collisions) {
         var inWorld = collisions.some(function (collision) {
           return collision.obj.has(this._world);
@@ -35,7 +35,19 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
             x: from.x,
             y: from.y,
           });
+          return;
         }
+      }
+      var collisions = this.hit('Pushable');
+      if (collisions) {
+        var inWorldCollisions = collisions.filter(function (collision) {
+          return collision.obj.has(this._world);
+        }, this);
+        var shift_x = this.x - from.x;
+        var shift_y = this.y - from.y;
+        inWorldCollisions.forEach(function (collision) {
+          collision.obj.shift(shift_x, shift_y);
+        });
       }
     },
     stopMovement: function () {

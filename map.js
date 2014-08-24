@@ -76,12 +76,14 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
       console.log("Light transition triggered.");
       this._light.show();
       this._dark.hide();
+      Crafty.viewport.follow(Crafty('DarkPlayer'), 0, 0);
       return this;
     },
     showDark: function () {
       console.log("Dark transition triggered.");
       this._light.hide();
       this._dark.show();
+      Crafty.viewport.follow(Crafty('LightPlayer'), 0, 0);
       return this;
     },
     swap: function () {

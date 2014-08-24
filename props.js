@@ -51,4 +51,10 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       this._active = shouldBeActive;
     },
   });
+
+  Crafty.c('Pushable', {
+    init: function () {
+      this.requires('2D, Collision');
+    },
+  });
 });
