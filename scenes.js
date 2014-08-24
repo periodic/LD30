@@ -3,7 +3,15 @@
  */
 define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
 
-  function buildLevel(lightMap, darkMap, nextScene) {
+  /*
+   * Creates a map, places characters and does the initial map transition.
+   * |lightMap| and |darkMap| should have the loaded JSON data of their
+   * respective maps.  |nextScene| is the name of the scene to transition to
+   * when this map is complete.  |opt_transition| is either "Light" or "Dark" to
+   * specify which map to start on.
+   */
+  function buildLevel(lightMap, darkMap, nextScene, opt_transition) {
+    var transition = opt_transition || 'Dark';
     var map = Crafty.e('DoubleMap')
       .doubleMap(lightMap, darkMap)
       .onComplete(nextScene);
@@ -19,7 +27,7 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
       y: darkStart.y,
     });
 
-    Crafty.trigger('DarkTransition');
+    Crafty.trigger(transition + 'Transition');
   }
 
   Crafty.scene('Loading', function (nextScene, assetList) {
