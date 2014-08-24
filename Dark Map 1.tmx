@@ -8,7 +8,7 @@
  </tileset>
  <layer name="Ground" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYKAdYMKCcanDx6elOmLcR08AAB0QACE=
+   eJxjYKAdYAJiNiTMhEcdMxLGpw4fn1R1bFgwNsCMBdMKAABFEABZ
   </data>
  </layer>
  <layer name="ToggleBlock" width="10" height="10">
