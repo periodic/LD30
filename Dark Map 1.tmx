@@ -17,7 +17,11 @@
   </data>
  </layer>
  <objectgroup name="Goal" width="20" height="20">
+<<<<<<< HEAD
+  <object name="EndPosition" type="EndPosition" x="257" y="99" width="31" height="22"/>
+=======
   <object x="249" y="91" width="46" height="43"/>
+>>>>>>> FETCH_HEAD
  </objectgroup>
  <layer name="Props" width="20" height="20">
   <data encoding="base64" compression="zlib">

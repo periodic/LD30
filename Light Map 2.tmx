@@ -23,6 +23,6 @@
   <object name="StartPostition" type="StartPosition" x="1" y="608" width="29" height="30"/>
  </objectgroup>
  <objectgroup name="Goal" width="20" height="20">
-  <object x="357" y="417" width="23" height="28"/>
+  <object name="EndPosition" type="EndPosition" x="357" y="417" width="23" height="28"/>
  </objectgroup>
 </map>
