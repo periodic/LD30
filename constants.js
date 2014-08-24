@@ -2,8 +2,10 @@
  * Global constants.  Import this file as 'k' for convenience.
  */
 define({
-  canvasWidthPx: 400,
-  canvasHeightPx: 400,
+  canvasWidthTiles: 20,
+  canvasHeightTiles: 20,
+  canvasWidthPx: 20 * 32,
+  canvasHeightPx: 20 * 32,
   characterWidth: 18,
   characterHeight: 22,
   activeZLayer: 200,
