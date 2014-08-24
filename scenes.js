@@ -134,6 +134,12 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
       buildLevel(lightMap, darkMap, 'Victory');
     });
   });
+  
+  Crafty.scene('Map_Walking_Test', function () {
+    require(['walking_test_map_light', 'walking_test_map_dark', 'map'], function (lightMap, darkMap) {
+      buildLevel(lightMap, darkMap, 'Victory');
+    });
+  });
 
   Crafty.scene('LongWalk', function () {
     require(['LongWalkLight', 'LongWalkDark'], function (lightMap, darkMap) {
