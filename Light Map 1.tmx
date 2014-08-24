@@ -17,11 +17,7 @@
   </data>
  </layer>
  <objectgroup name="Goal" width="20" height="20">
-<<<<<<< HEAD
-  <object name="EndPosition" type="EndPosition" x="258" y="98" width="29" height="21"/>
-=======
   <object x="246" y="86" width="49" height="51"/>
->>>>>>> FETCH_HEAD
  </objectgroup>
  <layer name="Trigger" width="20" height="20">
   <properties>
