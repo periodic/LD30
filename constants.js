@@ -25,6 +25,7 @@ define({
     xMax: 42,
     yMax: 68,
   },
+  characterWalkAnimationDuration: 600, // ms
 
   levelFadeOut: 1500, // ms
 });

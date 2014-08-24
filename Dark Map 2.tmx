@@ -14,11 +14,6 @@
    eJxjYKA+YAJiNijNRIZeBiT9pOhjQuOTopcNisnRi49Pil42LBifXlLDCN1eZJoYs5DDGBeNTy9y+GIzi5B7sQFcYUVMGA4WAAAlswCp
   </data>
  </layer>
- <layer name="Interactible" width="15" height="15">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUDCQAAAOEAAE=
-  </data>
- </layer>
  <objectgroup name="Start" width="15" height="15">
   <object name="StartPostition" type="StartPosition" x="130" y="768" width="64" height="64"/>
  </objectgroup>
