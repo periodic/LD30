@@ -11,5 +11,6 @@ Map-Hook Entity Types
 * Ground: The ground layer helps define the base movable area.  Any empty tile in the ground layer is impassable.
 * Impassable: Anything tagged as impassable is impassable.
 * Pushable: The items with this tag will be pushable by the player.
+* Hole: An object that acts as an impassable hole until a block is moved over it.  Once a Pushable is moved over the hole it will disappear and the Hole will be filled and passable by the player.
 
 
