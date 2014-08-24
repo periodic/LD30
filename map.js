@@ -1,4 +1,27 @@
-define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
+define(['lib/crafty', 'constants', 'lib/tiledmapbuilder'], function (Crafty, k) {
+  Crafty.c('Goal', {
+    init: function () {
+      this.requires('2D, Canvas, Color');
+      this.color('green');
+      console.log('Goal created.', this);
+    },
+  });
+
+  Crafty.c('Impassable', {
+    init: function () {
+      this.requires('2D');
+    },
+  });
+
+  Crafty.c('TileEmpty', {
+    init: function () {
+      this.requires('2D').attr({
+        w: k.tileWidth,
+        h: k.tileHeight,
+      });
+    },
+  });
+
   Crafty.c('World', {
     init: function () {
       this.requires('2D, Canvas, TiledMapBuilder');
@@ -22,13 +45,16 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
     init: function () {
       this.requires('2D,Keyboard');
       this.bind('KeyDown', function () {
-        console.log("Keydown");
         if (this.isDown('SPACE')) {
           this.swap();
         }
       })
       this.bind('LightTransition', this.showLight);
       this.bind('DarkTransition', this.showDark);
+      this.bind('EnterFrame', this.checkGoal);
+
+      this._lightDone = false;
+      this._darkDone = false;
     },
     showLight: function () {
       console.log("Light transition triggered.");
@@ -60,7 +86,23 @@ define(['lib/crafty', 'lib/tiledmapbuilder'], function () {
         e.addComponent('DarkWorld');
       });
 
+      Crafty('Ground TileEmpty').each(function () { 
+        this.addComponent('Impassable');
+      });
+
       return this;
+    },
+    checkGoal: function () {
+      var lightGoal = Crafty('LightWorld Goal').get(0);
+      var darkGoal = Crafty('DarkWorld Goal').get(0);
+      
+      this._lightDone = lightGoal.contains(Crafty('DarkPlayer'));
+      this._darkDone = darkGoal.contains(Crafty('LightPlayer'));
+
+      if (this._lightDone && this._darkDone) {
+        console.log('Level complete.');
+        Crafty.scene(this._nextScene);
+      }
     },
     onComplete: function(nextScene) {
       // TODO: Call this when the map is complete.

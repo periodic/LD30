@@ -8,4 +8,6 @@ define({
   characterHeight: 22,
   activeZLayer: 200,
   inactiveZLayer: 100,
+  tileWidth: 32,
+  tileHeight: 32,
 });
