@@ -170,7 +170,11 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     },
     onComplete: function(nextScene) {
       // TODO: Call this when the map is complete.
-      this._nextScene = nextScene;
+      Crafty.audio.play("zone_out");
+      setTimeout( function (nextScene) {
+        this._nextScene = nextScene;
+      }, 3000 );
+      
     },
   });
 });
