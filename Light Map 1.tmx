@@ -35,7 +35,7 @@
  </objectgroup>
  <layer name="Background" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBgcgBUJDzbAigXTCgAAGpAAKQ==
+   eJxjYBgcgBEJDzbAiAXTCgAABpAACQ==
   </data>
  </layer>
 </map>
