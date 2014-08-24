@@ -24,7 +24,7 @@
  </objectgroup>
  <layer name="Background" width="10" height="25">
   <data encoding="base64" compression="zlib">
-   eJxjYKANYKWyWaxofHraTyxgxYJHAXlgNAzJB9jCDACp7ABH
+   eJxjYKANYKSyWYxofHraTyxgxIJHAXlgNAzJB9jCDAAlHAAP
   </data>
  </layer>
 </map>
