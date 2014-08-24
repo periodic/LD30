@@ -149,7 +149,7 @@ define({ "height":20,
  "tilesets":[
         {
          "firstgid":1,
-         "image":"..\/..\/..\/..\/src\/js-games\/LD30\/images\/tileset.png",
+         "image":"images\/tileset.png",
          "imageheight":128,
          "imagewidth":256,
          "margin":0,
@@ -164,7 +164,7 @@ define({ "height":20,
         }, 
         {
          "firstgid":9,
-         "image":"..\/..\/..\/..\/src\/js-games\/LD30\/images\/tileset2.png",
+         "image":"images\/tileset2.png",
          "imageheight":128,
          "imagewidth":320,
          "margin":0,
