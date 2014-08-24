@@ -19,12 +19,12 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
     var lightStart = Crafty('LightWorld StartPosition');
     Crafty.e('DarkPlayer').attr({
       x: lightStart.x,
-      y: lightStart.y,
+      y: lightStart.y - k.characterCollision.yMin,
     });
     var darkStart = Crafty('DarkWorld StartPosition');
     Crafty.e('LightPlayer').attr({
       x: darkStart.x,
-      y: darkStart.y,
+      y: darkStart.y - k.characterCollision.yMin,
     });
 
     Crafty.trigger(transition + 'Transition');

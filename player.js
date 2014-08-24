@@ -12,8 +12,18 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
         .fourway(2)
         .bind('Moved', this.movement)
         .bind('Invalidate', this._updateZ)
+        .collision(
+          [k.characterCollision.xMin, k.characterCollision.yMin],
+          [k.characterCollision.xMin, k.characterCollision.yMax],
+          [k.characterCollision.xMax, k.characterCollision.yMax],
+          [k.characterCollision.xMax, k.characterCollision.yMin]
+          )
         ._updateZ();
       this.bumpSound = limitSound('bump', 500);
+
+      if (k.debug) {
+        this.addComponent('WiredHitBox');
+      }
     },
     _show: function () {
       this.alpha = 1.0;
@@ -28,7 +38,6 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       this.attr({
         z: this._y + this._h,
       });
-      log("player z", this.z);
       return this;
     },
     movement: function (from) {
@@ -42,7 +51,6 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
         if (!collidingOnlyEmpties){
           this.bumpSound();
         }
-
         this.attr({
           x: from.x,
           y: from.y,

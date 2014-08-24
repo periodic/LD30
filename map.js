@@ -7,7 +7,11 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
   Crafty.c('Impassable', {
     init: function () {
-      this.requires('2D');
+      this.requires('2D, Collision')
+          .collision();
+      if (k.debug) {
+        this.addComponent('WiredHitBox');
+      }
     },
   });
 
@@ -113,7 +117,6 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
       this._lightDone = false;
       this._darkDone = false;
-      Crafty.audio.play("ambient", -1);
     },
     showLight: function () {
       console.log("Light transition triggered.");
@@ -144,7 +147,6 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
       });
       this._dark._children.forEach(function (e) {
         e.addComponent('DarkWorld');
-        e.z = e.y;
       });
 
       Crafty('Ground TileEmpty').each(function () {
