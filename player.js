@@ -11,8 +11,6 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       })
       .fourway(2)
       .bind('Moved', this.movement)
-      //.onHit('TileEmpty', this.stopMovement)
-      //.onHit('Impassable', this.stopMovement);
     },
     show: function () {
       this.alpha = 1.0;
@@ -25,29 +23,40 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       this.disableControl();
     },
     movement: function (from) {
-      var collisions = this.hit('Impassable');
+      var collisions = this.hitInWorld('Impassable');
       if (collisions) {
-        var inWorld = collisions.some(function (collision) {
-          return collision.obj.has(this._world);
-        }, this);
-        if (inWorld) {
+        // Abort
+        this.attr({
+          x: from.x,
+          y: from.y,
+        });
+        return;
+      }
+
+      var collisions = this.hitInWorld('Pushable');
+      if (collisions) {
+        var shift_x = this.x - from.x;
+        var shift_y = this.y - from.y;
+
+        var pathIsBlocked = collisions.some(function (collision) {
+          collision.obj.shift(shift_x, shift_y);
+          var willCollide = collision.obj.hitInWorld('Impassable').length > 0;
+          collision.obj.shift(-shift_x, -shift_y);
+          return willCollide;
+        });
+
+        if (!pathIsBlocked) {
+          collisions.forEach(function (collision) {
+            collision.obj.shift(shift_x, shift_y);
+          });
+        } else {
+          // Abort
           this.attr({
             x: from.x,
             y: from.y,
           });
           return;
         }
-      }
-      var collisions = this.hit('Pushable');
-      if (collisions) {
-        var inWorldCollisions = collisions.filter(function (collision) {
-          return collision.obj.has(this._world);
-        }, this);
-        var shift_x = this.x - from.x;
-        var shift_y = this.y - from.y;
-        inWorldCollisions.forEach(function (collision) {
-          collision.obj.shift(shift_x, shift_y);
-        });
       }
     },
     stopMovement: function () {
@@ -61,9 +70,9 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
 
   Crafty.c('LightPlayer', {
     init: function () {
-      this.requires('Player, LightGuy')
-        .bind('LightTransition', this.show)
-        .bind('DarkTransition', this.hide)
+      this.requires('Player, LightGuy, DarkWorld')
+        .bind('LightTransition', this.hide)
+        .bind('DarkTransition', this.show)
         .setName('LightGuy');
       this._world = 'DarkWorld';
     },
@@ -71,9 +80,9 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
 
   Crafty.c('DarkPlayer', {
     init: function () {
-      this.requires('Player, DarkGuy')
-        .bind('LightTransition', this.hide)
-        .bind('DarkTransition', this.show)
+      this.requires('Player, DarkGuy, LightWorld')
+        .bind('LightTransition', this.show)
+        .bind('DarkTransition', this.hide)
         .setName('DarkGuy');
       this._world = 'LightWorld';
     },

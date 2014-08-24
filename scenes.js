@@ -19,7 +19,7 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
       y: darkStart.y,
     });
 
-    Crafty.trigger('LightTransition');
+    Crafty.trigger('DarkTransition');
   }
 
   Crafty.scene('Loading', function (nextScene, assetList) {
@@ -53,7 +53,7 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
   });
 
   Crafty.scene('Map_001', function () {
-    require(['Dark Map 1', 'Light Map 1', 'map'], function (lightMap, darkMap) {
+    require(['Light Map 1', 'Dark Map 1', 'map'], function (lightMap, darkMap) {
       buildLevel(lightMap, darkMap, 'Map_002');
     });
   });

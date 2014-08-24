@@ -39,9 +39,27 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     },
   });
 
+  Crafty.c('WorldEntity', {
+    hitInWorld: function (component) {
+      var collisions = this.hit(component);
+
+      if (collisions) {
+        var remaining = collisions.filter(function (collision) {
+          return collision.obj.has(this._world);
+        }, this);
+        if (remaining.length > 0) {
+          return remaining;
+        }
+      }
+      return false;
+    },
+  });
+
   Crafty.c('DarkWorld', {
     playerType: 'LightPlayer',
+    _world: 'DarkWorld',
     init: function () {
+      this.requires('WorldEntity');
     },
     getPlayer: function () {
       return Crafty('LightPlayer').get(0);
@@ -50,7 +68,9 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
   Crafty.c('LightWorld', {
     playerType: 'DarkPlayer',
+    _world: 'LightWorld',
     init: function () {
+      this.requires('WorldEntity');
     },
     getPlayer: function () {
       return Crafty('DarkPlayer').get(0);
