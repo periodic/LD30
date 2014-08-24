@@ -39,7 +39,6 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
 
       if (collisions) {
         // Abort
-        log("Aborting movement: ", collisions);
         var collidingOnlyEmpties = collisions.every(function (collision) {
           return collision.obj.has("TileEmpty");
         })

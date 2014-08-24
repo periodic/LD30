@@ -16,7 +16,7 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
     },
     activate: function (signal) {
       if (signal != this.properties.triggerId) return;
-      console.log('Activating block.', this);
+      console.log('Activating block.');
       this.removeComponent('Impassable')
           .removeComponent('ImpassablePlayerOnly')
           .dynamicZ(k.decalZLayer);
@@ -84,7 +84,6 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
       if (this.hitInWorld) {
         var holeCollisions = this.hitInWorld('Hole');
         if (holeCollisions) {
-          log("I'm touching a hole!", holeCollisions);
           var consumed = holeCollisions.reduce(function (block, collision) {
             if (!block) return null;
             if (Math.abs(collision.overlap) >= 28) {
@@ -106,7 +105,6 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
           .dynamicZ(k.decalZLayer);
     },
     consume: function (block) {
-      log("Nom, nom, blocks.", this, block);
       if (this._world == 'LightWorld') {
         this.addComponent('LightHoleFull');
       } else {
