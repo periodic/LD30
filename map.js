@@ -76,6 +76,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
       console.log("Light transition triggered.");
       this._light.show();
       this._dark.hide();
+      Crafty.background('#c8c8c8');
       Crafty.viewport.follow(Crafty('DarkPlayer'), 0, 0);
       return this;
     },
@@ -83,6 +84,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
       console.log("Dark transition triggered.");
       this._light.hide();
       this._dark.show();
+      Crafty.background('#373737');
       Crafty.viewport.follow(Crafty('LightPlayer'), 0, 0);
       return this;
     },
