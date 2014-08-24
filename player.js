@@ -9,7 +9,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
           w: k.characterWidth,
           h: k.characterHeight,
         })
-        .fourway(2.5)
+        .fourway(k.characterSpeed)
         .bind('Moved', this.movement)
         .collision(
           [k.characterCollision.xMin, k.characterCollision.yMin],
