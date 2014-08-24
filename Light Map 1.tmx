@@ -16,7 +16,9 @@
    eJxjYBgFQwGwE+CPglEwCkYBvQEARiAADw==
   </data>
  </layer>
- <objectgroup name="Goal" width="20" height="20"/>
+ <objectgroup name="Goal" width="20" height="20">
+  <object name="EndPosition" type="EndPosition" x="258" y="98" width="29" height="21"/>
+ </objectgroup>
  <layer name="Prop" width="20" height="20">
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRMApIBwAGQAAB

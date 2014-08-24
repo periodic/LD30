@@ -6,23 +6,20 @@
  <tileset firstgid="5" name="tileset2" tilewidth="32" tileheight="32">
   <image source="images/tileset2.png" width="160" height="32"/>
  </tileset>
- <tileset firstgid="10" name="tileset2" tilewidth="32" tileheight="32">
-  <image source="images/tileset2.png" width="160" height="32"/>
- </tileset>
  <layer name="Ground" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DwACY0TA3zkM2l1CwmND41zEN2I6Xm4eNTwzxK4oea8QozD50m13xs8UBJvKCbR2k849NDir+pHQcAt4gAYQ==
+   eJxjYBgagAkJU8s8ZJoa5qFjappLLUBNs2DmoZtJiR3YwpEWbh7u5jHhYFNiHjXjYzCG2ah5pAMABOcASw==
   </data>
  </layer>
  <layer name="Interactible" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DwAHYqm8dKZfNGwfAF1E57MMAKNXs4pkUAR7QAJQ==
+   eJxjYBgF1AasA+2AYQA4gZgdyh7s4TnqPtIBO2ElAwqo7T5OKps3WMIPAKXkAEM=
   </data>
  </layer>
  <objectgroup name="Start" width="20" height="20">
-  <object name="StartPosition" type="StartPosition" x="1" y="610" width="26" height="26"/>
+  <object name="StartPostition" type="StartPosition" x="194" y="610" width="28" height="28"/>
  </objectgroup>
  <objectgroup name="Goal" width="20" height="20">
-  <object name="EndPosition" type="EndPosition" x="356" y="418" width="26" height="27"/>
+  <object name="EndPosition" type="EndPosition" x="130" y="67" width="27" height="26"/>
  </objectgroup>
 </map>
