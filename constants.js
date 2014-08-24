@@ -29,7 +29,15 @@ define({
 
   portalHeight: 64,
   portalWidth: 42,
+  portalCollision: {
+    xMin: 0,
+    yMin: 30,
+    xMax: 42,
+    yMax: 94,
+  },
   portalOffset: 32,
 
   levelFadeOut: 1500, // ms
+
+  debug: false,
 });

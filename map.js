@@ -1,27 +1,28 @@
 define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Crafty, k) {
   Crafty.c('Goal', {
     init: function () {
-      this.requires('2D, Canvas, DynamicZ')
-          .dynamicZ(k.interactiveZLayer)
-          .bind('Invalidate', this._updateSprite);
+      this.requires('2D, Collision')
+          .collision(
+            [k.characterCollision.xMin, k.characterCollision.yMin],
+            [k.characterCollision.xMin, k.characterCollision.yMax],
+            [k.characterCollision.xMax, k.characterCollision.yMax],
+            [k.characterCollision.xMax, k.characterCollision.yMin]
+            );
+      if (k.debug) {
+        this.addComponent('WiredHitBox');
+      }
     },
-    _updateSprite: function () {
-      log("Invalidated portal");
-      var updated = false;
-      if (this._world == 'DarkWorld') {
-        log("Creating dark portal");
-        updated = true;
-        this.addComponent('DarkPortal');
-      }
-      if (this._world == 'LightWorld') {
-        log("Creating light portal");
-        updated = true;
-        this.addComponent('LightPortal');
-      }
-      if (updated) {
-        this.unbind('Invalidate', this._updateSprite);
-        this.y = this.y - k.portalOffset;
-      }
+  });
+
+  Crafty.c('LightGoal', {
+    init: function () {
+      this.requires('2D, Canvas, Goal, LightPortal, LightWorld');
+    },
+  });
+
+  Crafty.c('DarkGoal', {
+    init: function () {
+      this.requires('2D, Canvas, Goal, DarkPortal, DarkWorld');
     },
   });
 

@@ -21,10 +21,27 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
       x: lightStart.x,
       y: lightStart.y - k.characterCollision.yMin,
     });
+
     var darkStart = Crafty('DarkWorld StartPosition');
     Crafty.e('LightPlayer').attr({
       x: darkStart.x,
       y: darkStart.y - k.characterCollision.yMin,
+    });
+
+    var lightGoal = Crafty('LightWorld Goal');
+    var lightPortal = Crafty.e('LightGoal');
+    lightPortal.attr({
+      x: lightGoal.x + (lightGoal.w - lightPortal.w) / 2,
+      y: lightGoal.y + lightGoal.h - lightPortal.h,
+      z: lightGoal.y + lightGoal.h,
+    });
+
+    var darkGoal = Crafty('DarkWorld Goal');
+    var darkPortal = Crafty.e('DarkGoal');
+    darkPortal.attr({
+      x: darkGoal.x + (darkGoal.w - darkPortal.w) / 2,
+      y: darkGoal.y + darkGoal.h - darkPortal.h,
+      z: darkGoal.y + darkGoal.h,
     });
 
     Crafty.trigger(transition + 'Transition');
@@ -134,7 +151,7 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
       buildLevel(lightMap, darkMap, 'Victory');
     });
   });
-  
+
   Crafty.scene('Map_Walking_Test', function () {
     require(['walking_test_map_light', 'walking_test_map_dark', 'map'], function (lightMap, darkMap) {
       buildLevel(lightMap, darkMap, 'Victory');
