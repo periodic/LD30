@@ -183,6 +183,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
         this._isComplete = true;
 
+        //Crafty.audio.pause("instrumental")
         Crafty.audio.play("zone_out");
 
         var nextScene = this._nextScene;
