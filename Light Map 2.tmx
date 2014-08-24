@@ -11,12 +11,12 @@
  </tileset>
  <layer name="Ground" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYKA+YAFiDijNQoZeBiT9pOhjQeMTC3ih9nGQoRddLSV6ObBgfHpJDSN0e5FpYsxCDmNcND69MP+g+48YvbgArrAiJgwHCwAA9aMBHg==
+   eJxjYKA+YAFiDijNQoZeBiT9pOhjQeOTopcDisnRi49Pil4OLBifXlLDCN1eZJoYs5DDGBeNTy/MP+j+I0YvLoArrIgJw8ECAN8jARU=
   </data>
  </layer>
  <layer name="Interactible" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYKA+4IbSvGTo5aSmQ0YB1QE3YSVYAXJa4ANiASg9ChgYALVIAGY=
+   eJxjYKA+4KZALyfVXDEKaAEoiVsY4ANiASg9ChgYAH3UAEw=
   </data>
  </layer>
  <objectgroup name="Start" width="15" height="15">
@@ -28,6 +28,11 @@
  <layer name="Background" width="15" height="15">
   <data encoding="base64" compression="zlib">
    eJxjYBh8gHGA9ZNjH73txOUGZExIPTXtpjVgRKKpFd64zKKmHcQAAB8MABY=
+  </data>
+ </layer>
+ <layer name="Pushable" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAd4KWh2dQEQ8WdQxmMhjFuAABbeAAo
   </data>
  </layer>
 </map>
