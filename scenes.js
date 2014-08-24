@@ -52,6 +52,12 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
     loadingText.y = (k.canvasHeightPx - loadingText._h) / 2;
   });
 
+  Crafty.scene('Test', function () {
+    require(['level1a', 'level1b', 'map'], function (lightMap, darkMap) {
+      buildLevel(lightMap, darkMap, 'Victory');
+    });
+  });
+  
   Crafty.scene('Map_001', function () {
     require(['Dark Map 1', 'Light Map 1', 'map'], function (lightMap, darkMap) {
       buildLevel(lightMap, darkMap, 'Map_002');
@@ -63,9 +69,9 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
       buildLevel(lightMap, darkMap, 'Victory');
     });
   });
-
-  Crafty.scene('Test', function () {
-    require(['level1a', 'level1b', 'map'], function (lightMap, darkMap) {
+  
+  Crafty.scene('Map_003', function () {
+    require(['Dark Map 3', 'Light Map 3', 'map'], function (lightMap, darkMap) {
       buildLevel(lightMap, darkMap, 'Victory');
     });
   });
