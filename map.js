@@ -127,6 +127,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
       this._lightDone = false;
       this._darkDone = false;
+      Crafty.audio.play("ambient", -1);
     },
     showLight: function () {
       console.log("Light transition triggered.");
@@ -182,7 +183,11 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     },
     onComplete: function(nextScene) {
       // TODO: Call this when the map is complete.
-      this._nextScene = nextScene;
+      Crafty.audio.play("zone_out");
+      setTimeout( function (nextScene) {
+        this._nextScene = nextScene;
+      }, 3000 );
+      
     },
   });
 });

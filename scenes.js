@@ -28,6 +28,7 @@ define(['lib/crafty', 'constants', 'assets', 'player'], function(Crafty, k) {
     });
 
     Crafty.trigger(transition + 'Transition');
+    Crafty.audio.play("zone_in");
   }
 
   Crafty.scene('Loading', function (nextScene, assetList) {
