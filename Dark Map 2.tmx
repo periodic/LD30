@@ -6,7 +6,7 @@
  <tileset firstgid="9" name="tileset2" tilewidth="64" tileheight="64">
   <image source="images/tileset2.png" width="320" height="128"/>
  </tileset>
- <tileset firstgid="14" name="tileset2" tilewidth="64" tileheight="64">
+ <tileset firstgid="19" name="tileset2" tilewidth="64" tileheight="64">
   <image source="images/tileset2.png" width="320" height="128"/>
  </tileset>
  <layer name="Ground" width="15" height="15">
@@ -16,14 +16,14 @@
  </layer>
  <layer name="Interactible" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBhcgHOgHTAKaA440eiRDgAw8AAc
+   eJxjYBgFo2AUDCQAAAOEAAE=
   </data>
  </layer>
  <objectgroup name="Start" width="15" height="15">
-  <object name="StartPostition" type="StartPosition" x="130" y="768" width="60" height="60"/>
+  <object name="StartPostition" type="StartPosition" x="130" y="768" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="Goal" width="15" height="15">
-  <object name="EndPosition" type="EndPosition" x="842" y="386" width="60" height="60"/>
+  <object name="EndPosition" type="EndPosition" x="832" y="384" width="64" height="64"/>
  </objectgroup>
  <layer name="Background" width="15" height="15">
   <data encoding="base64" compression="zlib">
@@ -52,5 +52,21 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="Blocks" width="15" height="15"/>
+ <objectgroup name="Blocks" width="15" height="15">
+  <object name="Block1" type="ToggleBlock" gid="9" x="384" y="192" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="dark1"/>
+   </properties>
+  </object>
+  <object name="Block2" type="ToggleBlock" gid="9" x="448" y="704" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="Dark2"/>
+   </properties>
+  </object>
+  <object name="Block3" type="ToggleBlock" gid="9" x="576" y="704" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="dark3"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
