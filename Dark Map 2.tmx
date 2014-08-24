@@ -60,7 +60,7 @@
   </object>
   <object name="Block2" type="ToggleBlock" gid="9" x="448" y="704" width="64" height="64">
    <properties>
-    <property name="triggerId" value="Dark2"/>
+    <property name="triggerId" value="dark2"/>
    </properties>
   </object>
   <object name="Block3" type="ToggleBlock" gid="9" x="576" y="704" width="64" height="64">

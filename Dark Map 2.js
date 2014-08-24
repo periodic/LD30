@@ -169,7 +169,7 @@ define({ "height":15,
                  "name":"Block2",
                  "properties":
                     {
-                     "triggerId":"Dark2"
+                     "triggerId":"dark2"
                     },
                  "type":"ToggleBlock",
                  "visible":true,
