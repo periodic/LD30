@@ -11,12 +11,12 @@
  </tileset>
  <layer name="Ground" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYEAFLEDMAaVZGEgDIPWsSPpJ0QdTz0qiXl6ofRxIZpFiLysUk6MXGXBgwfj0IocRKxZMyM0sSHxiwhs5jJFpYsIbZgcDA6b/iNEL8w+6/3CFFTFhiCusiAnDwQYA5vIBhw==
+   eJxjYEAFLEDMAaVZGEgDMPUcDKTpRbeLFL28UPs4yNCLrpYSvRxYMD69pIYRur3INDFmIYcxLhqfXph/0P1HjF5cAFdYEROGwwkAAEFmAR4=
   </data>
  </layer>
  <layer name="Interactible" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYEAF3FCal4F0wEmGnoEGrFA8EgA3YSVYAXJa4ANiASg9CqgDAOkwAHA=
+   eJxjYEAF3FCal4F0wEmGnlFAP8BNWAlWgJwW+IBYAEqPAuoAANAcAGY=
   </data>
  </layer>
  <objectgroup name="Start" width="15" height="15">
@@ -25,4 +25,9 @@
  <objectgroup name="Goal" width="15" height="15">
   <object name="EndPosition" type="EndPosition" x="357" y="161" width="23" height="28"/>
  </objectgroup>
+ <layer name="Background" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAuYB1g/eTYR287cbkBGRNST027aQ1YkWhqhTcus6hpB70AAKkQAGo=
+  </data>
+ </layer>
 </map>
