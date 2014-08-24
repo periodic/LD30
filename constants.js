@@ -21,4 +21,5 @@ define({
     xMax: 21,
     yMax: 34,
   },
+  levelFadeOut: 1500, // ms
 });

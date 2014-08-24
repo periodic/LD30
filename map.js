@@ -90,6 +90,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
   Crafty.c('DarkWorld', {
     playerType: 'LightPlayer',
     _world: 'DarkWorld',
+    _isComplete: false,
     init: function () {
       this.requires('WorldEntity')
         .bind('LightTransition', this.hide)
@@ -176,18 +177,26 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
       this._lightDone = lightGoal.intersect(Crafty('DarkPlayer'));
       this._darkDone = darkGoal.intersect(Crafty('LightPlayer'));
 
-      if (this._lightDone && this._darkDone) {
+      if (this._lightDone && this._darkDone && !this._isComplete) {
         console.log('Level complete.');
-        Crafty.scene(this._nextScene);
+
+        this._isComplete = true;
+
+        Crafty.audio.play("zone_out");
+
+        var nextScene = this._nextScene;
+
+        Crafty('Player').each(function () {
+          this.disableControl();
+        });
+
+        setTimeout(function () {
+          Crafty.scene(nextScene);
+        }, k.levelFadeOut);
       }
     },
     onComplete: function(nextScene) {
-      // TODO: Call this when the map is complete.
-      Crafty.audio.play("zone_out");
-      setTimeout( function (nextScene) {
-        this._nextScene = nextScene;
-      }, 3000 );
-      
+      this._nextScene = nextScene;
     },
   });
 });
