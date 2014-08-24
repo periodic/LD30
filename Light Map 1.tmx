@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
-  <image source="images/tileset.png" width="128" height="32"/>
+  <image source="images/tileset.png" width="128" height="64"/>
  </tileset>
- <tileset firstgid="5" name="tileset2" tilewidth="32" tileheight="32">
+ <tileset firstgid="9" name="tileset2" tilewidth="32" tileheight="32">
   <image source="images/tileset2.png" width="160" height="32"/>
  </tileset>
- <layer name="Ground" width="20" height="20">
+ <layer name="Ground" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFIMCCBVNqHj7+cDSPmuE3CkbBKBj8AAAqTwBB
+   eJxjYKAdYMGCcanDx6elOmLcR08AADiQAEE=
   </data>
  </layer>
- <layer name="Interactible " width="20" height="20">
+ <layer name="Interactible " width="10" height="10">
   <properties>
    <property name="triggerId" value="trigger1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFQwGwE+CPglEwCkYBvQEARiAADw==
+   eJxjYBg6gJsAfzgAABR4ABc=
   </data>
  </layer>
- <objectgroup name="Goal" width="20" height="20">
-  <object name="EndPosition" type="EndPosition" x="257" y="99" width="31" height="22"/>
+ <objectgroup name="Goal" width="10" height="10">
+  <object name="EndPosition" type="EndPosition" x="161" y="67" width="31" height="22"/>
  </objectgroup>
- <layer name="Trigger" width="20" height="20">
+ <layer name="Trigger" width="10" height="10">
   <properties>
    <property name="triggerId" value="trigger1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFQwGwE+CPglEwCkYBvQEARiAADw==
+   eJxjYBg6gJsAfzgAABR4ABc=
   </data>
  </layer>
- <objectgroup name="Start" width="20" height="20">
-  <object name="StartPosition" type="StartPosition" x="259" y="226" width="25" height="25"/>
+ <objectgroup name="Start" width="10" height="10">
+  <object name="StartPosition" type="StartPosition" x="163" y="194" width="25" height="25"/>
  </objectgroup>
 </map>
