@@ -1,3 +1,7 @@
+function l() {
+  console.log.apply(console, arguments);
+}
+
 require.config({
   // Cache buster.  Remove for production.  Appends the timestamp to all
   // included files to avoid the cache.  Note that changes to this file may

@@ -10,24 +10,18 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       this.properties = this.properties || {};
       this.properties.tiggerId = k.globalTrigger;
 
-      this.bind('Signal', this.signalReceived);
+      this.bind('SignalActive', this.activate);
+      this.bind('SignalInactive', this.deactivate);
     },
-    signalReceived: function (signal, active) {
-      if (signal === this.properties.triggerId) {
-        if (active) {
-          this.deactivate();
-        } else {
-          this.activate();
-        }
-      }
-    },
-    activate: function () {
+    activate: function (signal) {
+      if (signal != this.properties.triggerId) return;
       console.log('Activating block.');
       this.removeComponent('Impassable');
       this._active = true;
       // TODO: Change appearance.
     },
-    deactivate: function () {
+    deactivate: function (signal) {
+      if (signal != this.properties.triggerId) return;
       console.log('Deactivating block.');
       this.addComponent('Impassable');
       this._active = false;
@@ -48,11 +42,11 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       var shouldBeActive = this.intersect(this.getPlayer());
       if (!this._active && shouldBeActive) {
         console.log('Activating signal: ', this.properties.triggerId);
-        Crafty.trigger('Signal', this.properties.triggerId, true)
+        Crafty.trigger('SignalActive', this.properties.triggerId)
       }
       if (this._active && !shouldBeActive) {
         console.log('Deactivating signal: ',  this.properties.triggerId);
-        Crafty.trigger('Signal', this.properties.triggerId, true)
+        Crafty.trigger('SignalInactive', this.properties.triggerId)
       }
       this._active = shouldBeActive;
     },
