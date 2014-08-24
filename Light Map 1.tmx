@@ -22,7 +22,7 @@
  <objectgroup name="Goal" width="10" height="10">
   <object name="EndPosition" type="EndPosition" x="161" y="67" width="31" height="22"/>
  </objectgroup>
- <layer name="Trigger" width="10" height="10">
+ <layer name="ToggleBlock" width="10" height="10">
   <properties>
    <property name="triggerId" value="trigger1"/>
   </properties>

@@ -11,7 +11,7 @@
    eJxjYKAdYAJiNiTMhEcdPj6t1LFhwQMNADYQAEE=
   </data>
  </layer>
- <layer name="ToggleBlock" width="10" height="10">
+ <layer name="Trigger" width="10" height="10">
   <properties>
    <property name="triggerId" value="trigger1"/>
   </properties>
