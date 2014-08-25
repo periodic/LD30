@@ -42,15 +42,18 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
             [0,0], [0,1], [0,2], [0,3]
           ]);
     },
-    _show: function () {
-      this.visible = true;
-      this.enableControl();
-      this.dynamicZ(k.interactiveZLayer);
-    },
     _hide: function () {
-      this.visible = false;
+      this.cancelTween();
+      this.tween({alpha: 0}, k.worldFadeTime);
       this.disableControl();
-      this.dynamicZ(k.decalZLayer + 1);
+      return this;
+    },
+    _show: function () {
+      this.cancelTween();
+      this.visible = true;
+      this.tween({alpha: 1.0}, k.worldFadeTime);
+      this.enableControl();
+      return this;
     },
     _newDirection: function (direction) {
       this.pauseAnimation();
@@ -122,8 +125,8 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
   Crafty.c('LightPlayer', {
     init: function () {
       this.requires('Player, LightGuy, WorldEntity')
-        .bind('LightTransition', this._hide)
-        .bind('DarkTransition', this._show)
+        .bind('DarkFadeOutStart', this._hide)
+        .bind('DarkFadeInStart', this._show)
         .setName('LightGuy')
         ._initAnimations();
       this._world = 'DarkWorld';
@@ -133,8 +136,8 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
   Crafty.c('DarkPlayer', {
     init: function () {
       this.requires('Player, DarkGuy, WorldEntity')
-        .bind('LightTransition', this._show)
-        .bind('DarkTransition', this._hide)
+        .bind('LightFadeOutStart', this._hide)
+        .bind('LightFadeInStart', this._show)
         .setName('DarkGuy')
         ._initAnimations();
       this._world = 'LightWorld';

@@ -79,6 +79,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
   Crafty.c('WorldEntity', {
     init: function () {
+      this.requires("Tween");
       this._children.forEach(function (e) {
         if (e.addComponent) {
           e.addComponent(this._world);
@@ -99,12 +100,16 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
       return false;
     },
     hide: function () {
-      this.visible = false;
-      return self;
+      this.cancelTween();
+      this.tween({alpha: 0}, k.worldFadeTime);
+      return this;
     },
     show: function () {
+      this.cancelTween();
       this.visible = true;
-      return self;
+      this.tween({alpha: 1.0}, k.worldFadeTime);
+
+      return this;
     },
   });
 
@@ -112,10 +117,17 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     playerType: 'LightPlayer',
     _world: 'DarkWorld',
     _isComplete: false,
+    _hideStartEvent: 'DarkFadeOutStart',
+    _showStartEvent: 'DarkFadeInStart',
+    _hideEndEvent: 'DarkFadeOutEnd',
+    _showEndEvent: 'DarkFadeInEnd',
     init: function () {
       this.requires('WorldEntity')
-        .bind('LightTransition', this.hide)
-        .bind('DarkTransition', this.show)
+        .bind('DarkFadeInStart', this.show)
+        .bind('DarkFadeOutStart', this.hide)
+        .bind('DarkFadeOutEnd', function () {
+          this.visible = false;
+        });
     },
     getPlayer: function () {
       return Crafty('LightPlayer').get(0);
@@ -127,8 +139,11 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     _world: 'LightWorld',
     init: function () {
       this.requires('WorldEntity')
-        .bind('LightTransition', this.show)
-        .bind('DarkTransition', this.hide)
+        .bind('LightFadeInStart', this.show)
+        .bind('LightFadeOutStart', this.hide)
+        .bind('LightFadeOutEnd', function () {
+          this.visible = false;
+        });
     },
     getPlayer: function () {
       return Crafty('DarkPlayer').get(0);
@@ -153,15 +168,35 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
       //Crafty.audio.play("instrumental", -1);
     },
     showLight: function () {
-      console.log("Light transition triggered.");
-      Crafty.background('#373737');
-      Crafty.viewport.follow(Crafty('DarkPlayer'), 0, 0);
+      log("Starting light transition.");
+      Crafty.viewport.centerOn(Crafty('DarkPlayer'), k.worldTransitionTime);
+      Crafty.trigger('DarkFadeOutStart');
+
+      setTimeout(function () {
+        Crafty.trigger('DarkFadeOutEnd');
+        Crafty.trigger('LightFadeInStart');
+      }, k.worldFadeTime);
+
+      setTimeout(function () {
+        Crafty.trigger('LightFadeInEnd');
+        Crafty.viewport.follow(Crafty('DarkPlayer'), 0, 0);
+      }, k.worldTransitionTime);
       return this;
     },
     showDark: function () {
-      console.log("Dark transition triggered.");
-      Crafty.background('#373737');
-      Crafty.viewport.follow(Crafty('LightPlayer'), 0, 0);
+      log("Starting dark transition.");
+      Crafty.viewport.centerOn(Crafty('LightPlayer'), k.worldTransitionTime);
+      Crafty.trigger('LightFadeOutStart');
+
+      setTimeout(function () {
+        Crafty.trigger('LightFadeOutEnd');
+        Crafty.trigger('DarkFadeInStart');
+      }, k.worldFadeTime);
+
+      setTimeout(function () {
+        Crafty.trigger('DarkFadeInEnd');
+        Crafty.viewport.follow(Crafty('LightPlayer'), 0, 0);
+      }, k.worldTransitionTime);
       return this;
     },
     swap: function () {
@@ -211,7 +246,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
         Crafty('Player').each(function () {
           this.disableControl();
-          this.animate('Spin', -1);
+          this.animate('Spin', 2);
         });
 
         setTimeout(function () {
