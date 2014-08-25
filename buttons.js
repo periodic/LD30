@@ -8,7 +8,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
   Crafty.c("MuteButton", {
     _stopped: false,
     init: function () {
-      this.requires("2D, Canvas, Persist, Image, Mouse")
+      this.requires("2D, Canvas, Persist, Image, Mouse, Button")
           .image('images/audio-high.png')
           .bind('Click', this._toggleMute)
           .bind('ViewportScroll', this._onScroll)
@@ -60,7 +60,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
   Crafty.c("ResetButton", {
     _stopped: false,
     init: function () {
-      this.requires("2D, Canvas, Persist, Image, Mouse")
+      this.requires("2D, Canvas, Persist, Image, Mouse, Button")
           .image('images/refresh.png')
           .bind('Click', this._resetScene)
           .bind('ViewportScroll', this._viewportScroll)

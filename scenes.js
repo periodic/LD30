@@ -49,7 +49,27 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
     Crafty.audio.play("zone_in", 1);
   }
 
-  Crafty.scene('Loading', function (nextScene, assetList) {
+  Crafty.scene('TitleScreen', function () {
+    Crafty('ResetButton').each(function () {
+      this.visible = false;
+    });
+    Crafty.e('2D, Canvas, Image, Keyboard')
+        .image("images/title-screen.png")
+        .attr({
+          w: k.canvasWidthPx,
+          h: k.canvasHeightPx,
+          x: 0,
+          y: 0,
+        })
+        .bind('KeyDown', function () {
+          Crafty('ResetButton').each(function () {
+            this.visible = true;
+          });
+          Crafty.scene('Intro');
+        });
+  });
+
+  Crafty.scene('Loading', function (nextScene) {
     var loadingText = Crafty.e('2D, Canvas, Text')
       .textFont({weight: 'bold', size: '20px', align: 'center'})
       .textColor('#FFFFFF')
@@ -58,6 +78,7 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
         x: k.canvasWidthPx / 2,
         y: k.canvasHeightPx / 2,
       });
+
     loadingText.x = (k.canvasWidthPx - loadingText._w) / 2;
     loadingText.y = (k.canvasHeightPx - loadingText._h) / 2;
 
