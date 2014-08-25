@@ -45,6 +45,13 @@ define({
   portalOffset: 32,
   portalAnimationDuration: 800, // ms
 
+  blockCollision: {
+    xMin: 6,
+    yMin: 6,
+    xMax: 58,
+    yMax: 58,
+  },
+
   worldTransitionTime: 250, // ms
   worldFadeTime: 125, // ms
   levelFadeOut: 1500, // ms

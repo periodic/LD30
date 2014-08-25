@@ -13,6 +13,10 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
 
       this.bind('SignalActive', this.activate);
       this.bind('SignalInactive', this.deactivate);
+
+      if (k.debug) {
+        this.addComponent('WiredHitBox');
+      }
     },
     activate: function (signal) {
       if (signal != this.properties.triggerId) return;
@@ -72,6 +76,12 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
     init: function () {
       this.requires('2D, Canvas, Collision, DynamicZ, MovableBlockBottom')
           .dynamicZ(k.interactiveZLayer)
+          .collision(
+            [k.blockCollision.xMin, k.blockCollision.yMin],
+            [k.blockCollision.xMin, k.blockCollision.yMax],
+            [k.blockCollision.xMax, k.blockCollision.yMax],
+            [k.blockCollision.xMax, k.blockCollision.yMin]
+            )
           .bind('Invalidate', this._invalidate);
       this._topSprite = Crafty.e('PushableTop')
         .attr({
@@ -79,6 +89,10 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
           y: this.y - k.tileHeight,
         })
       this.attach(this._topSprite);
+
+      if (k.debug) {
+        this.addComponent('WiredHitBox');
+      }
     },
     _invalidate: function () {
       if (this.hitInWorld) {

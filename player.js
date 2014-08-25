@@ -100,7 +100,8 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
 
         var pathIsBlocked = collisions.some(function (collision) {
           collision.obj.shift(shift_x, shift_y);
-          var willCollide = collision.obj.hitInWorld('Impassable').length > 0;
+          var willCollide = collision.obj.hitInWorld('Impassable').length > 0 ||
+                            collision.obj.hitInWorld('Pushable').length > 0;
           collision.obj.shift(-shift_x, -shift_y);
           return willCollide;
         });
