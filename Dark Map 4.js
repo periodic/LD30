@@ -86,7 +86,7 @@ define ({ "height":16,
          "name":"Blocks",
          "objects":[
                 {
-                 "gid":9,
+                 "gid":10,
                  "height":64,
                  "name":"Block1",
                  "properties":
@@ -100,7 +100,7 @@ define ({ "height":16,
                  "y":832
                 }, 
                 {
-                 "gid":9,
+                 "gid":10,
                  "height":64,
                  "name":"Block2",
                  "properties":
@@ -114,7 +114,7 @@ define ({ "height":16,
                  "y":704
                 }, 
                 {
-                 "gid":9,
+                 "gid":10,
                  "height":64,
                  "name":"Block3",
                  "properties":
@@ -128,7 +128,7 @@ define ({ "height":16,
                  "y":320
                 }, 
                 {
-                 "gid":9,
+                 "gid":10,
                  "height":64,
                  "name":"Block4",
                  "properties":
@@ -142,7 +142,7 @@ define ({ "height":16,
                  "y":192
                 }, 
                 {
-                 "gid":9,
+                 "gid":10,
                  "height":64,
                  "name":"Block5",
                  "properties":
@@ -154,6 +154,34 @@ define ({ "height":16,
                  "width":64,
                  "x":256,
                  "y":192
+                }, 
+                {
+                 "gid":10,
+                 "height":64,
+                 "name":"Block6",
+                 "properties":
+                    {
+                     "triggerId":"dark6"
+                    },
+                 "type":"ToggleBlock",
+                 "visible":true,
+                 "width":64,
+                 "x":512,
+                 "y":832
+                }, 
+                {
+                 "gid":10,
+                 "height":64,
+                 "name":"Block7",
+                 "properties":
+                    {
+                     "triggerId":"dark7"
+                    },
+                 "type":"ToggleBlock",
+                 "visible":true,
+                 "width":64,
+                 "x":256,
+                 "y":704
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -249,6 +277,20 @@ define ({ "height":16,
                  "width":64,
                  "x":320,
                  "y":256
+                }, 
+                {
+                 "gid":11,
+                 "height":64,
+                 "name":"Trigger7",
+                 "properties":
+                    {
+                     "triggerId":"light7"
+                    },
+                 "type":"Trigger",
+                 "visible":true,
+                 "width":64,
+                 "x":384,
+                 "y":768
                 }],
          "opacity":1,
          "type":"objectgroup",

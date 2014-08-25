@@ -28,22 +28,22 @@
   </data>
  </layer>
  <objectgroup name="Blocks" width="10" height="26">
-  <object name="Block1" type="ToggleBlock" gid="11" x="320" y="1472" width="64" height="64">
+  <object name="Block1" type="ToggleBlock" gid="12" x="320" y="1472" width="64" height="64">
    <properties>
     <property name="triggerId" value="light1"/>
    </properties>
   </object>
-  <object name="Block2" type="ToggleBlock" gid="11" x="320" y="1280" width="64" height="64">
+  <object name="Block2" type="ToggleBlock" gid="12" x="320" y="1280" width="64" height="64">
    <properties>
     <property name="triggerId" value="light2"/>
    </properties>
   </object>
-  <object name="Block3" type="ToggleBlock" gid="11" x="320" y="1088" width="64" height="64">
+  <object name="Block3" type="ToggleBlock" gid="12" x="320" y="1088" width="64" height="64">
    <properties>
     <property name="triggerId" value="light3"/>
    </properties>
   </object>
-  <object name="Block4" type="ToggleBlock" gid="11" x="384" y="512" width="64" height="64">
+  <object name="Block4" type="ToggleBlock" gid="12" x="384" y="512" width="64" height="64">
    <properties>
     <property name="triggerId" value="light4"/>
    </properties>

@@ -11,25 +11,9 @@
    eJxjYKAdYAFiDiTMgkcdPj6t1HFgwQMNAFGQAGE=
   </data>
  </layer>
- <layer name="Interactible " width="10" height="10">
-  <properties>
-   <property name="triggerId" value="trigger1"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJxjYBg6gJsAfzgAABR4ABc=
-  </data>
- </layer>
  <objectgroup name="Goal" width="10" height="10">
   <object name="EndPosition" type="EndPosition" x="322" y="134" width="62" height="44"/>
  </objectgroup>
- <layer name="ToggleBlock" width="10" height="10">
-  <properties>
-   <property name="triggerId" value="trigger1"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJxjYBg6gJsAfzgAABR4ABc=
-  </data>
- </layer>
  <objectgroup name="Start" width="10" height="10">
   <object name="StartPosition" type="StartPosition" x="322" y="388" width="50" height="50"/>
  </objectgroup>
@@ -38,4 +22,16 @@
    eJxjYBgcgBEJDzbAiAXTCgAABpAACQ==
   </data>
  </layer>
+ <objectgroup name="Blocks" width="10" height="10">
+  <object name="Block1" type="TogggleBlock" gid="12" x="448" y="320" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="light1"/>
+   </properties>
+  </object>
+  <object name="Block2" type="ToggleBlock" gid="12" x="192" y="320" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="light2"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

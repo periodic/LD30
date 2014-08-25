@@ -28,29 +28,39 @@
   <object name="Goal" x="704" y="192" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="Blocks" width="14" height="16">
-  <object name="Block1" type="ToggleBlock" gid="9" x="448" y="832" width="64" height="64">
+  <object name="Block1" type="ToggleBlock" gid="10" x="448" y="832" width="64" height="64">
    <properties>
     <property name="triggerId" value="dark1"/>
    </properties>
   </object>
-  <object name="Block2" type="ToggleBlock" gid="9" x="192" y="704" width="64" height="64">
+  <object name="Block2" type="ToggleBlock" gid="10" x="192" y="704" width="64" height="64">
    <properties>
     <property name="triggerId" value="dark2"/>
    </properties>
   </object>
-  <object name="Block3" type="ToggleBlock" gid="9" x="192" y="320" width="64" height="64">
+  <object name="Block3" type="ToggleBlock" gid="10" x="192" y="320" width="64" height="64">
    <properties>
     <property name="triggerId" value="dark3"/>
    </properties>
   </object>
-  <object name="Block4" type="ToggleBlock" gid="9" x="128" y="192" width="64" height="64">
+  <object name="Block4" type="ToggleBlock" gid="10" x="128" y="192" width="64" height="64">
    <properties>
     <property name="triggerId" value="dark4"/>
    </properties>
   </object>
-  <object name="Block5" type="ToggleBlock" gid="9" x="256" y="192" width="64" height="64">
+  <object name="Block5" type="ToggleBlock" gid="10" x="256" y="192" width="64" height="64">
    <properties>
     <property name="triggerId" value="dark5"/>
+   </properties>
+  </object>
+  <object name="Block6" type="ToggleBlock" gid="10" x="512" y="832" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="dark6"/>
+   </properties>
+  </object>
+  <object name="Block7" type="ToggleBlock" gid="10" x="256" y="704" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="dark7"/>
    </properties>
   </object>
  </objectgroup>
@@ -83,6 +93,11 @@
   <object name="Trigger6" type="Trigger" gid="11" x="320" y="256" width="64" height="64">
    <properties>
     <property name="triggerId" value="light6"/>
+   </properties>
+  </object>
+  <object name="Trigger7" type="Trigger" gid="11" x="384" y="768" width="64" height="64">
+   <properties>
+    <property name="triggerId" value="light7"/>
    </properties>
   </object>
  </objectgroup>
