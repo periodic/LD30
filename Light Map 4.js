@@ -161,7 +161,7 @@ define ({ "height":16,
                  "name":"Trigger6",
                  "properties":
                     {
-                     "triggerId":"dark6"
+                     "triggerId":"dark1"
                     },
                  "type":"Trigger",
                  "visible":true,
@@ -175,7 +175,7 @@ define ({ "height":16,
                  "name":"Trigger7",
                  "properties":
                     {
-                     "triggerId":"dark7"
+                     "triggerId":"dark2"
                     },
                  "type":"Trigger",
                  "visible":true,
@@ -284,7 +284,7 @@ define ({ "height":16,
                  "name":"Block7",
                  "properties":
                     {
-                     "triggerId":"light7"
+                     "triggerId":"light1"
                     },
                  "type":"ToggleBlock",
                  "visible":true,
