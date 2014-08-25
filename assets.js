@@ -38,11 +38,13 @@ define(['lib/crafty', 'constants'], function (Crafty, k) {
     'DarkTriggerActive': [5, 1],
 
     'DarkBlockInactive': [1, 0],
+    'DarkBlockActive': [0, 0], // same as inactive light trigger.
 
     'LightTriggerInactive': [0, 0],
     'LightTriggerActive': [5, 0],
 
     'LightBlockInactive': [3, 0],
+    'LightBlockActive': [2, 0], // same as inactive dark trigger.
 
     'MovableBlockTop': [4, 0],
     'DarkHole': [0, 1],
@@ -52,10 +54,12 @@ define(['lib/crafty', 'constants'], function (Crafty, k) {
     'MovableBlockBottom': [4, 1],
   });
 
+  /*
   Crafty.sprite(k.tileWidth, k.tileHeight, 'images/tileset.png', {
     'LightBlockActive': [3, 0],
     'DarkBlockActive': [1, 0],
   });
+  */
 
   // Audio
   Crafty.audio.add("instrumental", "audio/instrumental.ogg");
