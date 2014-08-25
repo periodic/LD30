@@ -27,7 +27,7 @@ define({ "height":10,
          "name":"Objects",
          "objects":[
                 {
-                 "height":32,
+                 "height":64,
                  "name":"Goal",
                  "properties":
                     {
@@ -35,12 +35,12 @@ define({ "height":10,
                     },
                  "type":"",
                  "visible":true,
-                 "width":32,
-                 "x":256,
-                 "y":80
+                 "width":64,
+                 "x":512,
+                 "y":160
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "name":"StartPosition",
                  "properties":
                     {
@@ -48,9 +48,9 @@ define({ "height":10,
                     },
                  "type":"",
                  "visible":true,
-                 "width":32,
-                 "x":32,
-                 "y":80
+                 "width":64,
+                 "x":64,
+                 "y":160
                 }, 
                 {
                  "gid":18,
@@ -63,8 +63,8 @@ define({ "height":10,
                  "type":"Pushable",
                  "visible":true,
                  "width":0,
-                 "x":96,
-                 "y":112
+                 "x":192,
+                 "y":256
                 }, 
                 {
                  "gid":16,
@@ -77,8 +77,22 @@ define({ "height":10,
                  "type":"Hole",
                  "visible":true,
                  "width":0,
+                 "x":384,
+                 "y":224
+                }, 
+                {
+                 "gid":18,
+                 "height":0,
+                 "name":"Block1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Pushable",
+                 "visible":true,
+                 "width":0,
                  "x":192,
-                 "y":112
+                 "y":192
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -92,13 +106,13 @@ define({ "height":10,
     {
 
     },
- "tileheight":32,
+ "tileheight":64,
  "tilesets":[
         {
          "firstgid":1,
-         "image":"..\/..\/..\/..\/src\/js-games\/LD30\/images\/tileset.png",
-         "imageheight":64,
-         "imagewidth":128,
+         "image":"images\/tileset.png",
+         "imageheight":128,
+         "imagewidth":256,
          "margin":0,
          "name":"tileset",
          "properties":
@@ -106,14 +120,14 @@ define({ "height":10,
 
             },
          "spacing":0,
-         "tileheight":32,
-         "tilewidth":32
+         "tileheight":64,
+         "tilewidth":64
         }, 
         {
          "firstgid":9,
-         "image":"..\/..\/..\/..\/src\/js-games\/LD30\/images\/tileset2.png",
-         "imageheight":64,
-         "imagewidth":160,
+         "image":"images\/tileset2.png",
+         "imageheight":128,
+         "imagewidth":320,
          "margin":0,
          "name":"props",
          "properties":
@@ -121,10 +135,10 @@ define({ "height":10,
 
             },
          "spacing":0,
-         "tileheight":32,
-         "tilewidth":32
+         "tileheight":64,
+         "tilewidth":64
         }],
- "tilewidth":32,
+ "tilewidth":64,
  "version":1,
  "width":10
 })

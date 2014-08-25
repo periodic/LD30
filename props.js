@@ -111,6 +111,7 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
         this.addComponent('DarkHoleFull');
       }
       this.removeComponent('ImpassablePlayerOnly')
+          .removeComponent('Hole')
           .removeComponent('DarkHoleEmpty')
           .removeComponent('LightHoleEmpty');
 

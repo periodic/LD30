@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
-  <image source="images/tileset.png" width="128" height="64"/>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="images/tileset.png" width="256" height="128"/>
  </tileset>
- <tileset firstgid="9" name="props" tilewidth="32" tileheight="32">
-  <image source="images/tileset2.png" width="160" height="64"/>
+ <tileset firstgid="9" name="props" tilewidth="64" tileheight="64">
+  <image source="images/tileset2.png" width="320" height="128"/>
  </tileset>
  <layer name="Background" width="10" height="10">
   <data encoding="base64" compression="zlib">
@@ -17,9 +17,10 @@
   </data>
  </layer>
  <objectgroup name="Objects" width="10" height="10">
-  <object name="Goal" x="256" y="80" width="32" height="32"/>
-  <object name="StartPosition" x="32" y="80" width="32" height="32"/>
-  <object name="Block1" type="Pushable" gid="18" x="96" y="112"/>
-  <object type="Hole" gid="16" x="192" y="112"/>
+  <object name="Goal" x="512" y="160" width="64" height="64"/>
+  <object name="StartPosition" x="64" y="160" width="64" height="64"/>
+  <object name="Block1" type="Pushable" gid="18" x="192" y="256"/>
+  <object type="Hole" gid="16" x="384" y="224"/>
+  <object name="Block1" type="Pushable" gid="18" x="192" y="192"/>
  </objectgroup>
 </map>
