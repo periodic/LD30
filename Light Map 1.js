@@ -82,7 +82,7 @@ define ({ "height":10,
                     {
                      "triggerId":"light1"
                     },
-                 "type":"TogggleBlock",
+                 "type":"ToggleBlock",
                  "visible":true,
                  "width":64,
                  "x":448,

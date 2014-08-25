@@ -23,7 +23,7 @@
   </data>
  </layer>
  <objectgroup name="Blocks" width="10" height="10">
-  <object name="Block1" type="TogggleBlock" gid="12" x="448" y="320" width="64" height="64">
+  <object name="Block1" type="ToggleBlock" gid="12" x="448" y="320" width="64" height="64">
    <properties>
     <property name="triggerId" value="light1"/>
    </properties>
