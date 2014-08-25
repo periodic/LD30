@@ -93,6 +93,20 @@ define({ "height":10,
                  "width":0,
                  "x":192,
                  "y":192
+                }, 
+                {
+                 "gid":10,
+                 "height":64,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"ToggleBlock",
+                 "visible":true,
+                 "width":64,
+                 "x":256,
+                 "y":256
                 }],
          "opacity":1,
          "type":"objectgroup",

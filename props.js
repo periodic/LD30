@@ -75,7 +75,8 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
       }
       this._active = shouldBeActive;
     },
-    _activate: function () {
+    _activate: function (signal) {
+      if (signal != this.properties.triggerId) return;
       if (this._world == 'DarkWorld') {
         this.removeComponent('LightTriggerInactive')
             .addComponent('LightTriggerActive');
@@ -84,7 +85,8 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
             .addComponent('DarkTriggerActive');
       }
     },
-    _deactivate: function () {
+    _deactivate: function (signal) {
+      if (signal != this.properties.triggerId) return;
       if (this._world == 'DarkWorld') {
         this.removeComponent('LightTriggerActive')
             .addComponent('LightTriggerInactive');
