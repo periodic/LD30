@@ -38,13 +38,13 @@ define(['lib/crafty', 'constants'], function (Crafty, k) {
     'DarkTriggerActive': [5, 1],
 
     'DarkBlockInactive': [1, 0],
-    'DarkBlockActive': [0, 0], // same as inactive light trigger.
+    'DarkBlockActive': [6, 0],
 
     'LightTriggerInactive': [0, 0],
     'LightTriggerActive': [5, 0],
 
     'LightBlockInactive': [3, 0],
-    'LightBlockActive': [2, 0], // same as inactive dark trigger.
+    'LightBlockActive': [6, 1],
 
     'MovableBlockTop': [4, 0],
     'DarkHole': [0, 1],
