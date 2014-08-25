@@ -121,10 +121,6 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     playerType: 'LightPlayer',
     _world: 'DarkWorld',
     _isComplete: false,
-    _hideStartEvent: 'DarkFadeOutStart',
-    _showStartEvent: 'DarkFadeInStart',
-    _hideEndEvent: 'DarkFadeOutEnd',
-    _showEndEvent: 'DarkFadeInEnd',
     init: function () {
       this.requires('WorldEntity')
         .bind('DarkFadeInStart', this.show)
@@ -155,22 +151,30 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
   });
 
   Crafty.c('DoubleMap', {
+    _transitionsEnabled: false,
     init: function () {
       this.requires('2D,Keyboard');
-      this.bind('KeyDown', function () {
-        if (this.isDown('SPACE')) {
-          this.swap();
-        }
-      })
       this.bind('LightTransition', this.showLight);
       this.bind('DarkTransition', this.showDark);
+
+      this.bind('DarkFadeInEnd', this._enableTransitions);
+      this.bind('LightFadeInEnd', this._enableTransitions);
+
       this.bind('EnterFrame', this.checkGoal);
 
       this._lightDone = false;
       this._darkDone = false;
     },
+    _enableTransitions: function () {
+      this.bind('KeyDown', this.swap);
+    },
+    _disableTransitions: function () {
+      this.unbind('KeyDown', this.swap);
+    },
     showLight: function () {
       log("Starting light transition.");
+      this._disableTransitions();
+
       Crafty.viewport.centerOn(Crafty('DarkPlayer'), k.worldTransitionTime);
       Crafty.trigger('DarkFadeOutStart');
 
@@ -187,6 +191,8 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
     },
     showDark: function () {
       log("Starting dark transition.");
+      this._disableTransitions();
+
       Crafty.viewport.centerOn(Crafty('LightPlayer'), k.worldTransitionTime);
       Crafty.trigger('LightFadeOutStart');
 
@@ -202,8 +208,9 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
       return this;
     },
     swap: function () {
-      Crafty.trigger(this._light.visible ? 'DarkTransition' : 'LightTransition');
-      return this;
+      if (this.isDown('SPACE')) {
+        Crafty.trigger(this._light.visible ? 'DarkTransition' : 'LightTransition');
+      }
     },
     doubleMap: function(mapData1, mapData2) {
       this._light = Crafty.e("World, LightWorld").setMapDataSource(mapData1);
@@ -240,6 +247,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
         console.log('Level complete.');
 
         this._isComplete = true;
+        this._disableTransitions();
 
         Crafty.audio.play("zone_out");
 
