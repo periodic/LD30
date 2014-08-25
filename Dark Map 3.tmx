@@ -8,7 +8,7 @@
  </tileset>
  <layer name="Ground" width="10" height="25">
   <data encoding="base64" compression="zlib">
-   eJxjYCAeMAExG5QmpA6ZxgXYkMyDmU2M/YQAIXuR1aGrxaaXDQsmxY7hro4JBxubOuQwpKWbhqM6YtI+LgAAVXcAjQ==
+   eJxjYCAeMAExG5QmpA6ZxgXYkMwjpBbZfmLUEQOw2YtNLxsWTIodw10dEw42NnXIYUhLNw1HdcSkfVwAAEFPAIc=
   </data>
  </layer>
  <objectgroup name="Start" width="10" height="25">
@@ -19,7 +19,7 @@
  </objectgroup>
  <layer name="Background" width="10" height="25">
   <data encoding="base64" compression="zlib">
-   eJxjYKANYKSyWYxofHraTyxgxIJHAXlgNAzJB9jCDAAlHAAP
+   eJxjYKANYKSyWaSaR037SbETHY8C8sBoGJIPsIUZACHoAA4=
   </data>
  </layer>
  <layer name="Pushable" width="10" height="25">

@@ -30,7 +30,7 @@
  <objectgroup name="Triggers" width="14" height="16">
   <object name="Trigger1" type="Trigger" gid="9" x="448" y="832" width="64" height="64">
    <properties>
-    <property name="triggerId" value="dark 1"/>
+    <property name="triggerId" value="dark1"/>
    </properties>
   </object>
   <object name="Trigger2" type="Trigger" gid="9" x="192" y="704" width="64" height="64">
@@ -85,5 +85,11 @@
     <property name="triggerId" value="light6"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="Holes" width="14" height="16">
+  <object name="Hole1" type="Hole" gid="16" x="192" y="512" width="64" height="64"/>
+  <object name="Hole2" type="Hole" gid="16" x="448" y="256" width="64" height="64"/>
+  <object name="Hole3" type="Hole" gid="16" x="512" y="256" width="64" height="64"/>
+  <object name="Hole4" type="Hole" gid="16" x="576" y="256" width="64" height="64"/>
  </objectgroup>
 </map>
