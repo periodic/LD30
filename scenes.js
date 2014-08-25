@@ -32,7 +32,7 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
     var lightPortal = Crafty.e('LightGoal');
     lightPortal.attr({
       x: lightGoal.x + (lightGoal.w - lightPortal.w) / 2,
-      y: lightGoal.y + lightGoal.h - k.portalHeight,
+      y: lightGoal.y + (lightGoal.h - k.portalHeight - k.portalCollision.yMin) / 2,
       z: lightGoal.y + lightGoal.h,
     });
 
@@ -40,7 +40,7 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
     var darkPortal = Crafty.e('DarkGoal');
     darkPortal.attr({
       x: darkGoal.x + (darkGoal.w - darkPortal.w) / 2,
-      y: darkGoal.y + darkGoal.h - k.portalHeight,
+      y: darkGoal.y + (darkGoal.h - k.portalHeight - k.portalCollision.yMin) / 2,
       z: darkGoal.y + darkGoal.h,
     });
 

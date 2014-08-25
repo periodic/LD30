@@ -31,7 +31,7 @@ define({
   portalWidth: 42,
   portalCollision: {
     xMin: 0,
-    yMin: 30,
+    yMin: 98 - 22,
     xMax: 42,
     yMax: 98,
   },
