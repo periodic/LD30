@@ -17,6 +17,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
             y: k.muteButtonY,
             w: k.buttonWidth,
             h: k.buttonHeight,
+            z: k.buttonZ,
           });
 
       this._stopped = Crafty.storage("musicStartsPaused");
@@ -69,6 +70,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
             y: k.resetButtonY,
             w: k.buttonWidth,
             h: k.buttonHeight,
+            z: k.buttonZ,
           });
     },
     _viewportScroll: function () {

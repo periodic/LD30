@@ -6,6 +6,7 @@ define({
 
   buttonWidth: 32,
   buttonHeight: 32,
+  buttonZ: 9001,
   muteButtonX: 8,
   muteButtonY: 8,
   resetButtonX: 48,
