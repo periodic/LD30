@@ -125,14 +125,14 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
       speed: 5,
       speedRandom: 1.2,
       // Lifespan in frames
-      lifeSpan: 200,
+      lifeSpan: 100,
       lifeSpanRandom: 50,
       // Angle is calculated clockwise: 12pm is 0deg, 3pm is 90deg etc.
       angle: 0,
       angleRandom: 20,
-      startColour: [255, 131, 0, 1],
-      startColourRandom: [48, 50, 45, 0],
-      endColour: [245, 35, 0, 0],
+      startColour: [255, 0, 255, 1],
+      startColourRandom: [200, 200, 0, 0],
+      endColour: [0, 255, 255, 0],
       endColourRandom: [60, 60, 60, 0],
       // Only applies when fastMode is off, specifies how sharp the gradients are drawn
       sharpness: 50,
@@ -142,7 +142,7 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
       // How many frames should this last
       duration: -1,
       // Will draw squares instead of circle gradients
-      fastMode: false,
+      fastMode: true,
       gravity: { x: 0, y: 0.1 },
       // sensible values are 0-3
       jitter: 0
@@ -150,13 +150,13 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
     var leftParticles = Crafty.e('2D, Canvas, Particles')
       .particles(particleOptions)
       .attr({
-        x: loadingText.x - 50,
+        x: loadingText.x - 100,
         y: loadingText.y + loadingText.h,
       });
     var rightParticles = Crafty.e('2D, Canvas, Particles')
       .particles(particleOptions)
       .attr({
-        x: loadingText.x + loadingText.w + 50,
+        x: loadingText.x + loadingText.w + 100,
         y: loadingText.y + loadingText.h,
       });
   });

@@ -84,7 +84,7 @@ define(['lib/crafty', 'constants'], function(Crafty, k) {
       if (this._currentScene) {
         if (this._currentScene == 'Victory') {
           log('Resetting game.');
-          Crafty.scene('Map_001');
+          Crafty.scene('Intro');
         } else {
           log('Resetting level.');
           Crafty.scene(this._currentScene);
