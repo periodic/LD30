@@ -1,4 +1,4 @@
-define ({ "height":10,
+define({ "height":10,
  "layers":[
         {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 8, 8, 8, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -94,7 +94,7 @@ define ({ "height":10,
                  "name":"Block2",
                  "properties":
                     {
-                     "triggerId":"light2"
+                     "triggerId":"light1"
                     },
                  "type":"ToggleBlock",
                  "visible":true,
@@ -135,7 +135,7 @@ define ({ "height":10,
          "firstgid":9,
          "image":"images\/tileset2.png",
          "imageheight":128,
-         "imagewidth":320,
+         "imagewidth":384,
          "margin":0,
          "name":"tileset2",
          "properties":

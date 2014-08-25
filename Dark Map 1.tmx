@@ -4,7 +4,7 @@
   <image source="images/tileset.png" width="256" height="128"/>
  </tileset>
  <tileset firstgid="9" name="tileset2" tilewidth="64" tileheight="64">
-  <image source="images/tileset2.png" width="320" height="128"/>
+  <image source="images/tileset2.png" width="384" height="128"/>
  </tileset>
  <layer name="Ground" width="10" height="10">
   <data encoding="base64" compression="zlib">
@@ -30,7 +30,7 @@
   </object>
   <object name="Trigger2" type="Trigger" gid="11" x="192" y="320" width="64" height="64">
    <properties>
-    <property name="triggerId" value="light2"/>
+    <property name="triggerId" value="light1"/>
    </properties>
   </object>
  </objectgroup>
