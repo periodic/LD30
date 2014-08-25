@@ -41,7 +41,7 @@ define(['lib/crafty', 'constants'], function (Crafty, k) {
     'MovableBlockTop': [4, 0],
     'MovableBlockBottom': [4, 1],
   });
-  
+
   // Audio
   Crafty.audio.add("ambient", "audio/ambient.wav");
   Crafty.audio.add("instrumental", "audio/instrumental.ogg");

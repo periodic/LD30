@@ -1,7 +1,7 @@
 /*
  * Defines scenes and scene-specific setup and state.
  */
-define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, k) {
+define(['lib/crafty', 'constants', 'assets', 'player', 'map', 'audio'], function(Crafty, k) {
 
   /*
    * Creates a map, places characters and does the initial map transition.
