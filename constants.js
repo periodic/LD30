@@ -6,6 +6,11 @@ define({
 
   muteButtonPadding: 8, // px
 
+  buttonWidth: 32,
+  buttonHeight: 32,
+  resetButtonX: 48,
+  resetButtonY: 8,
+
   tileWidth: 64,
   tileHeight: 64,
   canvasWidthTiles: 10,

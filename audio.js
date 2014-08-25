@@ -41,7 +41,6 @@ define(['lib/crafty', 'constants'], function (Crafty, k) {
     },
   });
 
-
   Crafty.c('AudioManager', {
     _soundsPlaying: {},
     init: function () {

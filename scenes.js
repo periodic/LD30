@@ -4,6 +4,39 @@
 define(['lib/crafty', 'constants', 'audio', 'assets', 'player', 'map'], function(Crafty, k, audio) {
 
   /*
+   * The level-reset button.  Should be instantiated only after the game is started.
+   */
+  Crafty.c("ResetButton", {
+    _stopped: false,
+    init: function () {
+      this.requires("2D, Canvas, Persist, Image, Mouse")
+          .image('images/refresh.png')
+          .bind('Click', this._resetScene)
+          .bind('ViewportScroll', this._viewportScroll)
+          .bind('SceneChange', this._sceneChange)
+          .attr({
+            x: k.resetButtonX,
+            y: k.resetButtonY,
+            w: k.buttonWidth,
+            h: k.buttonHeight,
+          });
+    },
+    _viewportScroll: function () {
+      this.x = -Crafty.viewport.x + k.resetButtonX;
+      this.y = -Crafty.viewport.y + k.resetButtonY;
+    },
+    _sceneChange: function (ev) {
+      this._currentScene = ev.newScene;
+    },
+    _resetScene: function () {
+      if (this._currentScene) {
+        log('Resetting level.');
+        Crafty.scene(this._currentScene);
+      }
+    },
+  });
+
+  /*
    * Creates a map, places characters and does the initial map transition.
    * |lightMap| and |darkMap| should have the loaded JSON data of their
    * respective maps.  |nextScene| is the name of the scene to transition to

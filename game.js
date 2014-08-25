@@ -6,5 +6,7 @@ define(['constants', 'scenes', 'audio'], function(k, scenes, audio) {
   Crafty.viewport.init(k.canvasWidthPx, k.canvasHeightPx);
   Crafty.viewport.clampToEntities = true;
 
+  Crafty.e("ResetButton");
+
   Crafty.scene(scenes.loading, 'Map_001', ['level1a', 'level1b']);
 })
