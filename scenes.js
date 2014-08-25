@@ -53,8 +53,9 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
     Crafty('ResetButton').each(function () {
       this.visible = false;
     });
+
     Crafty.e('2D, Canvas, Image, Keyboard')
-        .image("images/title-screen.png")
+        .image("images/title-screen-layer1.png")
         .attr({
           w: k.canvasWidthPx,
           h: k.canvasHeightPx,
@@ -67,6 +68,30 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
           });
           Crafty.scene('Intro');
         });
+
+    var text = Crafty.e('2D, Canvas, Image, Tween')
+        .image("images/title-screen-layer2.png")
+        .attr({
+          w: k.canvasWidthPx,
+          h: k.canvasHeightPx,
+          x: 0,
+          y: 0,
+        });
+
+    function fadeInText() {
+      log("Fading out.");
+      text.cancelTween();
+      text.tween({alpha: 1.0}, 1000);
+      text.timeout(fadeOutText, 1000);
+    }
+    function fadeOutText() {
+      log("Fading in.");
+      text.cancelTween();
+      text.tween({alpha: 0.0}, 1000);
+      text.timeout(fadeInText, 1000);
+    }
+
+    fadeOutText();
   });
 
   Crafty.scene('Loading', function (nextScene) {
