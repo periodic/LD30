@@ -10,5 +10,5 @@ define(['constants', 'scenes', 'music', 'buttons'], function(k, scenes) {
   Crafty.e("MuteButton");
   Crafty.e("ResetButton");
 
-  Crafty.scene(scenes.loading, 'Map_001', ['level1a', 'level1b']);
+  Crafty.scene(scenes.loading, 'Intro', ['level1a', 'level1b']);
 })
