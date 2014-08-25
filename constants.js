@@ -53,8 +53,8 @@ define({
     yMax: 58,
   },
 
-  worldTransitionTime: 250, // ms
-  worldFadeTime: 125, // ms
+  worldTransitionTime: 500, // ms
+  worldFadeTime: 250, // ms
   levelFadeOut: 1500, // ms
 
   debug: false,
