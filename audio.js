@@ -31,11 +31,11 @@ define(['lib/crafty'], function () {
       log('Clicked');
       if (this._stopped) {
         this._stopped = false;
-        this._manager.play('instrumental');
+        this._manager.unpause('instrumental');
         this.image('images/audio-high.png')
       } else {
         this._stopped = true;
-        this._manager.stop('instrumental');
+        this._manager.pause('instrumental');
         this.image('images/audio-mute.png')
       }
     },
