@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="10" height="25" tilewidth="64" tileheight="64">
+<map version="1.0" orientation="orthogonal" width="10" height="26" tilewidth="64" tileheight="64">
  <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
   <image source="images/tileset.png" width="256" height="128"/>
  </tileset>
  <tileset firstgid="9" name="tileset2" tilewidth="64" tileheight="64">
   <image source="images/tileset2.png" width="320" height="128"/>
  </tileset>
- <layer name="Ground" width="10" height="25">
+ <layer name="Ground" width="10" height="26">
   <data encoding="base64" compression="zlib">
-   eJxjYCAeMAExG5QmpA6ZxgXYkMwjpBbZfmLUEQOw2YtNLxsWTIodw10dEw42NnXIYUhLNw1HdcSkfVwAAEFPAIc=
+   eJxjYCAeMAExG5QmpA6ZxgXYkMwjpBbZfmLUEQOw2YtNLxsWTIodw10dEw42NnXIYUhLN41kdcTkEVwAAFY/AIk=
   </data>
  </layer>
- <objectgroup name="Start" width="10" height="25">
-  <object name="StartPosition" type="StartPosition" x="320" y="1472" width="64" height="64"/>
+ <objectgroup name="Start" width="10" height="26">
+  <object name="StartPosition" type="StartPosition" x="320" y="1536" width="64" height="64"/>
  </objectgroup>
- <objectgroup name="Goal" width="10" height="25">
+ <objectgroup name="Goal" width="10" height="26">
   <object name="Goal" x="192" y="64" width="64" height="64"/>
  </objectgroup>
- <layer name="Background" width="10" height="25">
+ <layer name="Background" width="10" height="26">
   <data encoding="base64" compression="zlib">
-   eJxjYKANYKSyWaSaR037SbETHY8C8sBoGJIPsIUZACHoAA4=
+   eJxjYKANYKSyWaSaR037SbETHY8C8sBoGNIeMGMRAwAkGAAQ
   </data>
  </layer>
- <layer name="Pushable" width="10" height="25">
+ <layer name="Pushable" width="10" height="26">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFxALegXbAAIKR7PfhAAA+NAAb
+   eJxjYBgFxALegXbAAIKR7PeRBABCbAAb
   </data>
  </layer>
- <objectgroup name="Triggers" width="10" height="25">
+ <objectgroup name="Triggers" width="10" height="26">
   <object name="Trigger1" type="Trigger" gid="11" x="320" y="1472" width="64" height="64">
    <properties>
     <property name="triggerId" value="light1"/>
@@ -49,7 +49,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="Blocks" width="10" height="25">
+ <objectgroup name="Blocks" width="10" height="26">
   <object name="Block1" type="ToggleBlock" gid="9" x="512" y="960" width="64" height="64">
    <properties>
     <property name="triggerId" value="dark1"/>
