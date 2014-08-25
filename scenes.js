@@ -110,12 +110,16 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
       .attr({y: broughtToYou.y + 80})
       .centerHorizontal();
     var sound = Crafty.e('CenterText')
-      .text('Sound: Lindsay Haven')
+      .text('Audio: Lindsay Haven')
       .attr({y: broughtToYou.y + 100})
       .centerHorizontal();
     var production = Crafty.e('CenterText')
       .text('Production: Lindsay Haven')
       .attr({y: broughtToYou.y + 120})
+      .centerHorizontal();
+    var purpose = Crafty.e('CenterText')
+      .text('LD30 Jam, 2014')
+      .attr({y: broughtToYou.y + 200})
       .centerHorizontal();
 
     var particleOptions = {
