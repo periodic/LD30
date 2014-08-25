@@ -4,10 +4,10 @@
 define({
   globalTrigger: 'Global',
 
-  muteButtonPadding: 8, // px
-
   buttonWidth: 32,
   buttonHeight: 32,
+  muteButtonX: 8,
+  muteButtonY: 8,
   resetButtonX: 48,
   resetButtonY: 8,
 
