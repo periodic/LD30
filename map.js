@@ -255,6 +255,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
         Crafty('Player').each(function () {
           this.disableControl();
+          this.tween({alpha: 0}, k.levelFadeOut)
           //this.animate('Spin', 2);
         });
 

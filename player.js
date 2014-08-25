@@ -4,7 +4,7 @@
 define(['lib/crafty', 'constants'], function(Crafty, k) {
   Crafty.c('Player', {
     init: function () {
-      this.requires('2D, Canvas, Fourway, Collision, SpriteAnimation, DynamicZ')
+      this.requires('2D, Canvas, Fourway, Collision, SpriteAnimation, DynamicZ, Tween')
         .attr({
           w: k.characterWidth,
           h: k.characterHeight,
