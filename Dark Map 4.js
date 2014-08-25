@@ -256,6 +256,73 @@ define ({ "height":16,
          "width":14,
          "x":0,
          "y":0
+        }, 
+        {
+         "height":16,
+         "name":"Holes",
+         "objects":[
+                {
+                 "gid":14,
+                 "height":64,
+                 "name":"Hole1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Hole",
+                 "visible":true,
+                 "width":64,
+                 "x":192,
+                 "y":512
+                }, 
+                {
+                 "gid":14,
+                 "height":64,
+                 "name":"Hole2",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Hole",
+                 "visible":true,
+                 "width":64,
+                 "x":448,
+                 "y":256
+                }, 
+                {
+                 "gid":14,
+                 "height":64,
+                 "name":"Hole3",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Hole",
+                 "visible":true,
+                 "width":64,
+                 "x":512,
+                 "y":256
+                }, 
+                {
+                 "gid":14,
+                 "height":64,
+                 "name":"Hole4",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Hole",
+                 "visible":true,
+                 "width":64,
+                 "x":576,
+                 "y":256
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":14,
+         "x":0,
+         "y":0
         }],
  "orientation":"orthogonal",
  "properties":
