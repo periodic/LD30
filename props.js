@@ -11,14 +11,14 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
       this.properties = this.properties || {};
       this.properties.tiggerId = k.globalTrigger;
 
-      this.bind('SignalActive', this.activate);
-      this.bind('SignalInactive', this.deactivate);
+      this.bind('SignalActive', this._activate);
+      this.bind('SignalInactive', this._deactivate);
 
       if (k.debug) {
         this.addComponent('WiredHitBox');
       }
     },
-    activate: function (signal) {
+    _activate: function (signal) {
       if (signal != this.properties.triggerId) return;
       console.log('Activating block.');
       this.removeComponent('Impassable')
@@ -33,7 +33,7 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
             .addComponent('LightBlockActive');
       }
     },
-    deactivate: function (signal) {
+    _deactivate: function (signal) {
       if (signal != this.properties.triggerId) return;
       console.log('Deactivating block.');
       this.addComponent('Impassable')
@@ -52,26 +52,30 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
   Crafty.c('Trigger', {
     init: function () {
       this.requires('2D, Collision, DynamicZ')
+          .collision()
           .dynamicZ(k.decalZLayer)
-          .bind('EnterFrame', this.checkForTrigger);
+          .bind('EnterFrame', this.checkForTrigger)
+          .bind('SignalActive', this._activate)
+          .bind('SignalInactive', this._deactivate);
+
       this._active = false;
 
       this.properties = this.properties || {};
       this.properties.tiggerId = k.globalTrigger;
     },
     checkForTrigger: function () {
-      var shouldBeActive = this.intersect(this.getPlayer());
+      var shouldBeActive = this.hit(this.playerType);
       if (!this._active && shouldBeActive) {
-        this._activate();
+        console.log('Activating signal: ', this.properties.triggerId);
+        Crafty.trigger('SignalActive', this.properties.triggerId);
       }
       if (this._active && !shouldBeActive) {
-        this._deactivate();
+        Crafty.trigger('SignalInactive', this.properties.triggerId);
+        console.log('Deactivating signal: ',  this.properties.triggerId);
       }
       this._active = shouldBeActive;
     },
     _activate: function () {
-      console.log('Activating signal: ', this.properties.triggerId);
-      Crafty.trigger('SignalActive', this.properties.triggerId)
       if (this._world == 'DarkWorld') {
         this.removeComponent('LightTriggerInactive')
             .addComponent('LightTriggerActive');
@@ -81,8 +85,6 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
       }
     },
     _deactivate: function () {
-      console.log('Deactivating signal: ',  this.properties.triggerId);
-      Crafty.trigger('SignalInactive', this.properties.triggerId)
       if (this._world == 'DarkWorld') {
         this.removeComponent('LightTriggerActive')
             .addComponent('LightTriggerInactive');
