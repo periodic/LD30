@@ -134,7 +134,7 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
       if (this._oldX && this._oldY && (this._oldX != this._x || this._oldY != this._y)) {
         if (!this._moving) {
           this._moving = true;
-          Crafty.audio.play('block_push', -1);
+          Crafty.audio.play('block_push');
         }
       } else {
         if (this._moving) {
