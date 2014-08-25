@@ -75,7 +75,11 @@
     <property name="triggerId" value="light4"/>
    </properties>
   </object>
-  <object name="Trigger5" type="Trigger" gid="11" x="190" y="192"/>
+  <object name="Trigger5" type="Trigger" gid="11" x="192" y="192">
+   <properties>
+    <property name="triggerId" value="light5"/>
+   </properties>
+  </object>
   <object name="Trigger6" type="Trigger" gid="11" x="320" y="256" width="64" height="64">
    <properties>
     <property name="triggerId" value="light6"/>
