@@ -86,7 +86,7 @@ define ({ "height":15,
          "name":"Blocks",
          "objects":[
                 {
-                 "gid":11,
+                 "gid":12,
                  "height":64,
                  "name":"Block1",
                  "properties":
@@ -100,7 +100,7 @@ define ({ "height":15,
                  "y":640
                 }, 
                 {
-                 "gid":11,
+                 "gid":12,
                  "height":64,
                  "name":"Block2",
                  "properties":
@@ -114,7 +114,7 @@ define ({ "height":15,
                  "y":128
                 }, 
                 {
-                 "gid":11,
+                 "gid":12,
                  "height":64,
                  "name":"Block3",
                  "properties":

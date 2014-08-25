@@ -11,7 +11,7 @@
  </tileset>
  <layer name="Ground" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYKA+YAJiNijNRIZeBiT9pOhjQuOTopcNisnRi49Pil42LBifXlLDCN1eZJoYs5DDGBeNTy9y+GIzi5B7sQFcYUVMGA4WAAAlswCp
+   eJxjYKA+YAJiNijNRIZeBiT9pOhjQuOTopcNisnRi49Pil42LBifXlLDCN1eZJoYs5DDGBeNTy/MP+j+I0YvLoArrIgJw8ECADJDALU=
   </data>
  </layer>
  <objectgroup name="Start" width="15" height="15">
@@ -48,17 +48,17 @@
   </object>
  </objectgroup>
  <objectgroup name="Blocks" width="15" height="15">
-  <object name="Block1" type="ToggleBlock" gid="9" x="384" y="192" width="64" height="64">
+  <object name="Block1" type="ToggleBlock" gid="20" x="384" y="192" width="64" height="64">
    <properties>
     <property name="triggerId" value="dark1"/>
    </properties>
   </object>
-  <object name="Block2" type="ToggleBlock" gid="9" x="448" y="704" width="64" height="64">
+  <object name="Block2" type="ToggleBlock" gid="20" x="448" y="704" width="64" height="64">
    <properties>
     <property name="triggerId" value="dark2"/>
    </properties>
   </object>
-  <object name="Block3" type="ToggleBlock" gid="9" x="576" y="704" width="64" height="64">
+  <object name="Block3" type="ToggleBlock" gid="20" x="576" y="704" width="64" height="64">
    <properties>
     <property name="triggerId" value="dark3"/>
    </properties>

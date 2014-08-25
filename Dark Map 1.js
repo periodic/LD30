@@ -1,25 +1,10 @@
-define({ "height":10,
+define ({ "height":10,
  "layers":[
         {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6, 6, 6, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 6, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":10,
          "name":"Ground",
          "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":10,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-         "height":10,
-         "name":"Trigger",
-         "opacity":1,
-         "properties":
-            {
-             "triggerId":"trigger1"
-            },
          "type":"tilelayer",
          "visible":true,
          "width":10,
@@ -45,17 +30,6 @@ define({ "height":10,
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
-         "width":10,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-         "height":10,
-         "name":"Props",
-         "opacity":1,
-         "type":"tilelayer",
          "visible":true,
          "width":10,
          "x":0,
@@ -91,6 +65,45 @@ define({ "height":10,
          "name":"Background",
          "opacity":1,
          "type":"tilelayer",
+         "visible":true,
+         "width":10,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":10,
+         "name":"Triggers",
+         "objects":[
+                {
+                 "gid":11,
+                 "height":64,
+                 "name":"Trigger1",
+                 "properties":
+                    {
+                     "triggerId":"light1"
+                    },
+                 "type":"Trigger",
+                 "visible":true,
+                 "width":64,
+                 "x":448,
+                 "y":320
+                }, 
+                {
+                 "gid":11,
+                 "height":64,
+                 "name":"Trigger2",
+                 "properties":
+                    {
+                     "triggerId":"light2"
+                    },
+                 "type":"Trigger",
+                 "visible":true,
+                 "width":64,
+                 "x":192,
+                 "y":320
+                }],
+         "opacity":1,
+         "type":"objectgroup",
          "visible":true,
          "width":10,
          "x":0,
