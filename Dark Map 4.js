@@ -228,12 +228,12 @@ define ({ "height":16,
                  "name":"Trigger5",
                  "properties":
                     {
-
+                     "triggerId":"light5"
                     },
                  "type":"Trigger",
                  "visible":true,
                  "width":0,
-                 "x":190,
+                 "x":192,
                  "y":192
                 }, 
                 {
