@@ -1,7 +1,7 @@
 LD30
 ====
 
-Team Rolo's Ludum Dare 72 entry.
+Team Rollo's Ludum Dare 72 entry.
 
 Map-Hook Entity Types
 ---------------------
