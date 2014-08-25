@@ -1,7 +1,7 @@
 /*
  * Sets up the game and global state.
  */
-define(['constants', 'scenes'], function(k, scenes) {
+define(['constants', 'scenes', 'audio'], function(k, scenes, audio) {
   Crafty.init(k.canvasWidthPx, k.canvasHeightPx);
   Crafty.viewport.init(k.canvasWidthPx, k.canvasHeightPx);
   Crafty.viewport.clampToEntities = true;
