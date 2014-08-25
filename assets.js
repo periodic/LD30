@@ -44,7 +44,7 @@ define(['lib/crafty', 'constants'], function (Crafty, k) {
   
   // Audio
   Crafty.audio.add("ambient", "audio/ambient.wav");
-  Crafty.audio.add("instrumental", "audio/instrumental.wav");
+  Crafty.audio.add("instrumental", "audio/instrumental.ogg");
   Crafty.audio.add("bump", "audio/bump.wav");
   Crafty.audio.add("dark_walk", "audio/dark_walk.wav");
   Crafty.audio.add("zone_in", "audio/zone_in.wav");
