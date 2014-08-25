@@ -1,0 +1,10 @@
+block_push and block_drop original file found here:
+http://freesound.org/people/D%20W/sounds/147009/
+Cut and modified for the game.
+
+instrumental music -- the primary music heard throughout the game -- originally from:
+http://freemusicarchive.org/music/Wolf_Asylum/Unshackle/04_Line_Intersekt
+Cut down to just the first part and modified to loop more smoothly.
+
+bump, zone_in, and zone_out unmodified and generated at:
+http://www.superflashbros.net/as3sfxr/
