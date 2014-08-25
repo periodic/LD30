@@ -84,6 +84,7 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
   Crafty.c('WorldEntity', {
     init: function () {
       this.requires("Tween");
+      this.alpha = 0;
       this._children.forEach(function (e) {
         if (e.addComponent) {
           e.addComponent(this._world);
@@ -256,7 +257,6 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
         Crafty('Player').each(function () {
           this.disableControl();
           this.tween({alpha: 0}, k.levelFadeOut)
-          //this.animate('Spin', 2);
         });
 
         setTimeout(function () {
