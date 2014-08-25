@@ -62,6 +62,8 @@ define(['lib/crafty', 'constants'], function (Crafty, k) {
   Crafty.audio.add("bump", "audio/bump.wav");
   Crafty.audio.add("zone_in", "audio/zone_in.wav");
   Crafty.audio.add("zone_out", "audio/zone_out.wav");
+  Crafty.audio.add("block_drop", "audio/block_drop.ogg");
+  Crafty.audio.add("block_push", "audio/block_push.ogg");
 });
 
 

@@ -116,9 +116,9 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
             [k.blockCollision.xMin, k.blockCollision.yMin],
             [k.blockCollision.xMin, k.blockCollision.yMax],
             [k.blockCollision.xMax, k.blockCollision.yMax],
-            [k.blockCollision.xMax, k.blockCollision.yMin]
-            )
-          .bind('Invalidate', this._invalidate);
+            [k.blockCollision.xMax, k.blockCollision.yMin])
+          .bind('Invalidate', this._invalidate)
+          .timeout(this._checkForMovement, 200);
       this._topSprite = Crafty.e('PushableTop')
         .attr({
           x: this.x,
@@ -129,6 +129,25 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
       if (k.debug) {
         this.addComponent('WiredHitBox');
       }
+    },
+    _checkForMovement: function () {
+      if (this._oldX && this._oldY && (this._oldX != this._x || this._oldY != this._y)) {
+        if (!this._moving) {
+          this._moving = true;
+          Crafty.audio.play('block_push', -1);
+        }
+      } else {
+        if (this._moving) {
+          this._moving = false;
+          Crafty.audio.stop('block_push');
+        }
+      }
+      if (this._oldX != this._x || this._oldY != this._y) {
+        this._oldX = this._x;
+        this._oldY = this._y;
+        console.log(this._oldX, this._oldY);
+      }
+      this.timeout(this._checkForMovement, 200);
     },
     _invalidate: function () {
       if (this.hitInWorld) {
@@ -143,7 +162,9 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
             return block;
           }, this);
 
-          if (consumed) return;
+          if (consumed) {
+            Crafty.audio.stop('block_push');
+          }
         }
       }
     },
@@ -165,6 +186,7 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
           .removeComponent('DarkHoleEmpty')
           .removeComponent('LightHoleEmpty');
 
+      Crafty.audio.play('block_drop');
       block.destroy();
     },
   });
