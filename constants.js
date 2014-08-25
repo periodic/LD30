@@ -27,13 +27,13 @@ define({
   },
   characterWalkAnimationDuration: 600, // ms
 
-  portalHeight: 64,
+  portalHeight: 98,
   portalWidth: 42,
   portalCollision: {
     xMin: 0,
     yMin: 30,
     xMax: 42,
-    yMax: 94,
+    yMax: 98,
   },
   portalOffset: 32,
   portalAnimationDuration: 800, // ms
