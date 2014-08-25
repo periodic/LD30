@@ -13,4 +13,14 @@ Map-Hook Entity Types
 * Pushable: The items with this tag will be pushable by the player.
 * Hole: An object that acts as an impassable hole until a block is moved over it.  Once a Pushable is moved over the hole it will disappear and the Hole will be filled and passable by the player.
 
+Credits
+-------
 
+Art: Zoe Patrick
+Design: Brian Torrence, Lindasy Haven
+Engineering: Drew Haven
+Audio: Lindsay Haven
+Production: Lindsay Haven
+
+Volume and reload icons are from (Batch)[http://adamwhitcroft.com/batch/] by Adam Whitcroft.
+Music by Wolf Asylum via CC share-alike.
