@@ -4,6 +4,8 @@
 define({
   globalTrigger: 'Global',
 
+  muteButtonPadding: 8, // px
+
   tileWidth: 64,
   tileHeight: 64,
   canvasWidthTiles: 10,

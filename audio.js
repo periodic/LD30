@@ -2,7 +2,7 @@
  * An audio manager to prevent sound overlap.
  */
 
-define(['lib/crafty'], function () {
+define(['lib/crafty', 'constants'], function (Crafty, k) {
   /*
    * The mute button.
    */
@@ -14,8 +14,8 @@ define(['lib/crafty'], function () {
           .bind('Click', this._toggleMute)
           .bind('ViewportScroll', this._onScroll)
           .attr({
-            x: 0,
-            y: 0,
+            x: k.muteButtonPadding,
+            y: k.muteButtonPadding,
             w: 32,
             h: 32,
           });
@@ -24,8 +24,8 @@ define(['lib/crafty'], function () {
       this._manager = manager;
     },
     _onScroll: function () {
-      this.x = -Crafty.viewport.x;
-      this.y = -Crafty.viewport.y;
+      this.x = -Crafty.viewport.x + k.muteButtonPadding;
+      this.y = -Crafty.viewport.y + k.muteButtonPadding;
     },
     _toggleMute: function () {
       log('Clicked');
