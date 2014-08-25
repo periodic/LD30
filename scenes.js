@@ -11,7 +11,7 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
    * specify which map to start on.
    */
   function buildLevel(lightMap, darkMap, nextScene, opt_transition) {
-    var transition = opt_transition || 'Dark';
+    var transition = opt_transition || 'Light';
     var map = Crafty.e('DoubleMap')
       .doubleMap(lightMap, darkMap)
       .onComplete(nextScene);
@@ -161,7 +161,7 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
 
   Crafty.scene('LongWalk', function () {
     require(['LongWalkLight', 'LongWalkDark'], function (lightMap, darkMap) {
-      buildLevel(lightMap, darkMap, 'Victory', 'Light');
+      buildLevel(lightMap, darkMap, 'Victory');
     });
   });
 
