@@ -66,19 +66,57 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map'], function(Crafty, 
     });
   });
 
+  Crafty.c('CenterText', {
+    init: function () {
+      this.requires('2D, Canvas, Text')
+          .textFont({weight: 'bold', size: '16px', align: 'center'})
+          .textColor('#FFFFFF');
+    },
+    centerHorizontal: function () {
+      this.x = (k.canvasWidthPx - this._w) / 2;
+      return this;
+    },
+    centerVertical: function () {
+      this.y = (k.canvasHeightPx - this._h) / 2;
+      return this;
+    }
+  });
   Crafty.scene('Victory', function () {
     Crafty.viewport.x = 0;
     Crafty.viewport.y = 0;
-    var loadingText = Crafty.e('2D, Canvas, Text')
-      .textFont({weight: 'bold', size: '20px', align: 'center'})
-      .textColor('#FFFFFF')
+
+    var centerX = k.canvasWidthPx / 2;
+    var loadingText = Crafty.e('CenterText')
+      .textFont({size: '20px'})
       .text('Victory!')
-      .attr({
-        x: k.canvasWidthPx / 2,
-        y: k.canvasHeightPx / 2,
-      });
-    loadingText.x = (k.canvasWidthPx - loadingText._w) / 2;
-    loadingText.y = (k.canvasHeightPx - loadingText._h) / 2;
+      .centerHorizontal()
+      .centerVertical();
+
+    var broughtToYou = Crafty.e('CenterText')
+      .text('Brought to you by Team Rollo')
+      .attr({y: loadingText.y + 40})
+      .centerHorizontal();
+
+    var art = Crafty.e('CenterText')
+      .text('Art: Zoe Patrick')
+      .attr({y: broughtToYou.y + 40})
+      .centerHorizontal();
+    var design = Crafty.e('CenterText')
+      .text('Design: Brian Torrence, Lindsay Haven')
+      .attr({y: broughtToYou.y + 60})
+      .centerHorizontal();
+    var engineering = Crafty.e('CenterText')
+      .text('Engineering: Drew Haven')
+      .attr({y: broughtToYou.y + 80})
+      .centerHorizontal();
+    var sound = Crafty.e('CenterText')
+      .text('Sound: Lindsay Haven')
+      .attr({y: broughtToYou.y + 100})
+      .centerHorizontal();
+    var production = Crafty.e('CenterText')
+      .text('Production: Lindsay Haven')
+      .attr({y: broughtToYou.y + 120})
+      .centerHorizontal();
 
     var particleOptions = {
       maxParticles: 80,
