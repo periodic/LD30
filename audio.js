@@ -8,6 +8,11 @@ define(['lib/crafty'], function () {
     _soundsPlaying: {},
     init: function () {
     },
+    playOnce: function (soundId) {
+      log('Playing ' + soundId);
+      Crafty.audio.play(soundId, 1);
+      return this;
+    },
     play: function (soundId) {
       if (!this._soundsPlaying[soundId]) {
         log('Playing ' + soundId);

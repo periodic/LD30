@@ -168,8 +168,6 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
       this._lightDone = false;
       this._darkDone = false;
-      Crafty.audio.play("ambient", -1);
-      //Crafty.audio.play("instrumental", -1);
     },
     showLight: function () {
       log("Starting light transition.");
@@ -243,7 +241,6 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
         this._isComplete = true;
 
-        //Crafty.audio.pause("instrumental")
         Crafty.audio.play("zone_out");
 
         var nextScene = this._nextScene;

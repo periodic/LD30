@@ -1,7 +1,7 @@
 /*
  * Defines scenes and scene-specific setup and state.
  */
-define(['lib/crafty', 'constants', 'assets', 'player', 'map', 'audio'], function(Crafty, k) {
+define(['lib/crafty', 'constants', 'audio', 'assets', 'player', 'map'], function(Crafty, k, audio) {
 
   /*
    * Creates a map, places characters and does the initial map transition.
@@ -46,7 +46,8 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map', 'audio'], function
 
     Crafty.background('#373737');
     Crafty.trigger(transition + 'Transition');
-    Crafty.audio.play("zone_in");
+    audio.play('instrumental')
+         .playOnce("zone_in");
   }
 
   Crafty.scene('Loading', function (nextScene, assetList) {
@@ -64,6 +65,8 @@ define(['lib/crafty', 'constants', 'assets', 'player', 'map', 'audio'], function
     require(assetList, function () {
       Crafty.scene(nextScene);
     });
+
+    audio.stop('instrumental');
   });
 
   Crafty.scene('Victory', function () {
