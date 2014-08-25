@@ -78,21 +78,21 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
     _activate: function (signal) {
       if (signal != this.properties.triggerId) return;
       if (this._world == 'DarkWorld') {
-        this.removeComponent('LightTriggerInactive')
-            .addComponent('LightTriggerActive');
-      } else {
         this.removeComponent('DarkTriggerInactive')
             .addComponent('DarkTriggerActive');
+      } else {
+        this.removeComponent('LightTriggerInactive')
+            .addComponent('LightTriggerActive');
       }
     },
     _deactivate: function (signal) {
       if (signal != this.properties.triggerId) return;
       if (this._world == 'DarkWorld') {
-        this.removeComponent('LightTriggerActive')
-            .addComponent('LightTriggerInactive');
-      } else {
         this.removeComponent('DarkTriggerActive')
             .addComponent('DarkTriggerInactive');
+      } else {
+        this.removeComponent('LightTriggerActive')
+            .addComponent('LightTriggerInactive');
       }
     },
   });
