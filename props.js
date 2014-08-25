@@ -25,7 +25,13 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
           .removeComponent('ImpassablePlayerOnly')
           .dynamicZ(k.decalZLayer);
       this._active = true;
-      // TODO: Change appearance.
+      if (this._world == 'DarkWorld') {
+        this.removeComponent('DarkBlockInactive')
+            .addComponent('DarkBlockActive');
+      } else {
+        this.removeComponent('LightBlockInactive')
+            .addComponent('LightBlockActive');
+      }
     },
     deactivate: function (signal) {
       if (signal != this.properties.triggerId) return;
@@ -33,7 +39,13 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
       this.addComponent('Impassable')
           .dynamicZ(k.interactiveZLayer);
       this._active = false;
-      // TODO: Change appearance.
+      if (this._world == 'DarkWorld') {
+        this.removeComponent('DarkBlockActive')
+            .addComponent('DarkBlockInactive');
+      } else {
+        this.removeComponent('LightBlockActive')
+            .addComponent('LightBlockInactive');
+      }
     },
   });
 
@@ -50,14 +62,34 @@ define(['lib/crafty', 'constants', 'assets'], function(Crafty, k) {
     checkForTrigger: function () {
       var shouldBeActive = this.intersect(this.getPlayer());
       if (!this._active && shouldBeActive) {
-        console.log('Activating signal: ', this.properties.triggerId);
-        Crafty.trigger('SignalActive', this.properties.triggerId)
+        this._activate();
       }
       if (this._active && !shouldBeActive) {
-        console.log('Deactivating signal: ',  this.properties.triggerId);
-        Crafty.trigger('SignalInactive', this.properties.triggerId)
+        this._deactivate();
       }
       this._active = shouldBeActive;
+    },
+    _activate: function () {
+      console.log('Activating signal: ', this.properties.triggerId);
+      Crafty.trigger('SignalActive', this.properties.triggerId)
+      if (this._world == 'DarkWorld') {
+        this.removeComponent('LightTriggerInactive')
+            .addComponent('LightTriggerActive');
+      } else {
+        this.removeComponent('DarkTriggerInactive')
+            .addComponent('DarkTriggerActive');
+      }
+    },
+    _deactivate: function () {
+      console.log('Deactivating signal: ',  this.properties.triggerId);
+      Crafty.trigger('SignalInactive', this.properties.triggerId)
+      if (this._world == 'DarkWorld') {
+        this.removeComponent('LightTriggerActive')
+            .addComponent('LightTriggerInactive');
+      } else {
+        this.removeComponent('DarkTriggerActive')
+            .addComponent('DarkTriggerInactive');
+      }
     },
   });
 

@@ -34,11 +34,23 @@ define(['lib/crafty', 'constants'], function (Crafty, k) {
   });
 
   Crafty.sprite(k.tileWidth, k.tileHeight, 'images/tileset2.png', {
+    'DarkTriggerInactive': [0, 0], // light tile
+    'DarkTriggerActive': [1, 0], // dark tile
+
+    'DarkBlockInactive': [1, 0], // dark tile
+    'DarkBlockActive': [0, 0], // light tile
+
+    'LightTriggerInactive': [2, 0], // light tile
+    'LightTriggerActive': [3, 0], // dark tile
+
+    'LightBlockInactive': [3, 0], // dark tile
+    'LightBlockActive': [2, 0], // light tile
+
+    'MovableBlockTop': [4, 0],
     'DarkHole': [0, 1],
     'DarkHoleFull': [1, 1],
     'LightHole': [2, 1],
     'LightHoleFull': [3, 1],
-    'MovableBlockTop': [4, 0],
     'MovableBlockBottom': [4, 1],
   });
 
