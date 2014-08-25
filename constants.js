@@ -36,6 +36,7 @@ define({
     yMax: 94,
   },
   portalOffset: 32,
+  portalAnimationDuration: 800, // ms
 
   worldTransitionTime: 250, // ms
   worldFadeTime: 125, // ms

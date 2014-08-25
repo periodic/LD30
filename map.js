@@ -16,13 +16,17 @@ define(['lib/crafty', 'constants', 'lib/tiledmapbuilder', 'props'], function (Cr
 
   Crafty.c('LightGoal', {
     init: function () {
-      this.requires('2D, Canvas, Goal, LightPortal, LightWorld');
+      this.requires('2D, Canvas, SpriteAnimation, LightPortal, LightWorld')
+          .reel('Bob', k.portalAnimationDuration, 0, 0, 4)
+          .animate('Bob', -1);
     },
   });
 
   Crafty.c('DarkGoal', {
     init: function () {
-      this.requires('2D, Canvas, Goal, DarkPortal, DarkWorld');
+      this.requires('2D, Canvas, SpriteAnimation, DarkPortal, DarkWorld')
+          .reel('Bob', k.portalAnimationDuration, 0, 0, 4)
+          .animate('Bob', -1);
     },
   });
 
