@@ -1,10 +1,14 @@
 LD30
 ====
 
-Team Rollo's Ludum Dare 72 entry.
+Team Rollo's Ludum Dare #30 Game Jam entry.  The game was created in 48 hours on 8/23/2014 - 8/24/2014.  The theme for this contest was "Connected Worlds."
+
+You can view the game live at [http://periodic.github.io/LD30/](http://periodic.github.io/LD30/)
 
 Map-Hook Entity Types
 ---------------------
+
+For our designers:
 
 * StartPosition: The player will use this object for their start position.  Create an object-area with this name or type to place where the player starts.  There should only be one per map.
 * Goal: When both players are on goal blocks the level ends.  There should only be one per map.
@@ -22,5 +26,5 @@ Engineering: Drew Haven
 Audio: Lindsay Haven
 Production: Lindsay Haven
 
-Volume and reload icons are from (Batch)[http://adamwhitcroft.com/batch/] by Adam Whitcroft.
+Volume and reload icons are from [Batch](http://adamwhitcroft.com/batch/) by Adam Whitcroft.
 Music by Wolf Asylum via CC share-alike.
